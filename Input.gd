@@ -1,9 +1,9 @@
-extends TextureProgressBar
-
+extends VBoxContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	# get the list of values objects?
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -11,5 +11,5 @@ func _process(delta):
 	pass
 
 
-func _on_food_val_value_changed(value):
-	self.value = value
+func _on_input_button_pressed():
+	pass
