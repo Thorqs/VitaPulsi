@@ -1,48 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://cf6llchqikm33"]
+[gd_scene load_steps=2 format=3 uid="uid://cf6llchqikm33"]
 
-[ext_resource type="Script" path="res://Food_Bar.gd" id="1_4hkrw"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_uw1cm"]
-
-[sub_resource type="Gradient" id="Gradient_mut7y"]
-colors = PackedColorArray(0, 0, 0, 1, 0.254902, 1, 0.254902, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_1o40j"]
-gradient = SubResource("Gradient_mut7y")
-height = 128
-fill_from = Vector2(0, 1)
-
-[sub_resource type="Gradient" id="Gradient_dy7r6"]
-colors = PackedColorArray(0, 0, 0, 1, 0.0588235, 1, 0.831373, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_r6lgx"]
-gradient = SubResource("Gradient_dy7r6")
-height = 128
-fill_from = Vector2(0, 1)
-
-[sub_resource type="Gradient" id="Gradient_gq71d"]
-colors = PackedColorArray(0, 0, 0, 1, 1, 0, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_utspr"]
-gradient = SubResource("Gradient_gq71d")
-height = 128
-fill_from = Vector2(0, 1)
-
-[sub_resource type="Gradient" id="Gradient_n54yd"]
-colors = PackedColorArray(0, 0, 0, 1, 1, 1, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_1och8"]
-gradient = SubResource("Gradient_n54yd")
-height = 128
-fill_from = Vector2(0, 1)
-
-[sub_resource type="Gradient" id="Gradient_gp045"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_l6vmk"]
-gradient = SubResource("Gradient_gp045")
-height = 128
-fill_from = Vector2(0, 1)
+[ext_resource type="Script" path="res://Input.gd" id="1_n1rqy"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -86,137 +44,97 @@ horizontal_alignment = 1
 layout_mode = 2
 tab_alignment = 1
 
-[node name="Input_VBox" type="VBoxContainer" parent="Panel/MainVBox/TabContainer"]
-visible = false
+[node name="Input" type="VBoxContainer" parent="Panel/MainVBox/TabContainer"]
+layout_mode = 2
+script = ExtResource("1_n1rqy")
+
+[node name="HBox_Food" type="HBoxContainer" parent="Panel/MainVBox/TabContainer/Input"]
 layout_mode = 2
 
-[node name="HBox_Scale_Explain" type="HBoxContainer" parent="Panel/MainVBox/TabContainer/Input_VBox"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Panel/MainVBox/TabContainer/Input_VBox/HBox_Scale_Explain"]
-layout_mode = 2
-text = "On a scale of 1 to 10,  how would you rate:"
-
-[node name="HBox_Food" type="HBoxContainer" parent="Panel/MainVBox/TabContainer/Input_VBox"]
-layout_mode = 2
-
-[node name="Food_Label" type="Label" parent="Panel/MainVBox/TabContainer/Input_VBox/HBox_Food"]
+[node name="Food_Label" type="Label" parent="Panel/MainVBox/TabContainer/Input/HBox_Food"]
 layout_mode = 2
 text = "Your eating habits?"
 
-[node name="Food_Val" type="SpinBox" parent="Panel/MainVBox/TabContainer/Input_VBox/HBox_Food"]
+[node name="Food_spacer" type="Control" parent="Panel/MainVBox/TabContainer/Input/HBox_Food"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Food_Val" type="SpinBox" parent="Panel/MainVBox/TabContainer/Input/HBox_Food"]
 layout_mode = 2
 min_value = 1.0
 max_value = 10.0
 value = 5.0
 
-[node name="HBox_Water" type="HBoxContainer" parent="Panel/MainVBox/TabContainer/Input_VBox"]
+[node name="HBox_Water" type="HBoxContainer" parent="Panel/MainVBox/TabContainer/Input"]
 layout_mode = 2
 
-[node name="Water_Label" type="Label" parent="Panel/MainVBox/TabContainer/Input_VBox/HBox_Water"]
+[node name="Water_Label" type="Label" parent="Panel/MainVBox/TabContainer/Input/HBox_Water"]
 layout_mode = 2
 text = "Your water intake?"
 
-[node name="Water_Val" type="SpinBox" parent="Panel/MainVBox/TabContainer/Input_VBox/HBox_Water"]
+[node name="Water_space" type="Control" parent="Panel/MainVBox/TabContainer/Input/HBox_Water"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Water_Val" type="SpinBox" parent="Panel/MainVBox/TabContainer/Input/HBox_Water"]
 layout_mode = 2
 min_value = 1.0
 max_value = 10.0
 value = 5.0
 
-[node name="HBox_Sleep" type="HBoxContainer" parent="Panel/MainVBox/TabContainer/Input_VBox"]
+[node name="HBox_Sleep" type="HBoxContainer" parent="Panel/MainVBox/TabContainer/Input"]
 layout_mode = 2
 
-[node name="Sleep_Label" type="Label" parent="Panel/MainVBox/TabContainer/Input_VBox/HBox_Sleep"]
+[node name="Sleep_Label" type="Label" parent="Panel/MainVBox/TabContainer/Input/HBox_Sleep"]
 layout_mode = 2
 text = "Your quality of sleep?"
 
-[node name="Sleep_Val" type="SpinBox" parent="Panel/MainVBox/TabContainer/Input_VBox/HBox_Sleep"]
+[node name="sleep_space" type="Control" parent="Panel/MainVBox/TabContainer/Input/HBox_Sleep"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Sleep_Val" type="SpinBox" parent="Panel/MainVBox/TabContainer/Input/HBox_Sleep"]
 layout_mode = 2
 min_value = 1.0
 max_value = 10.0
 value = 5.0
 
-[node name="HBox_Stress" type="HBoxContainer" parent="Panel/MainVBox/TabContainer/Input_VBox"]
+[node name="HBox_Stress" type="HBoxContainer" parent="Panel/MainVBox/TabContainer/Input"]
 layout_mode = 2
 
-[node name="Stress_Label" type="Label" parent="Panel/MainVBox/TabContainer/Input_VBox/HBox_Stress"]
+[node name="Stress_Label" type="Label" parent="Panel/MainVBox/TabContainer/Input/HBox_Stress"]
 layout_mode = 2
 text = "Your stress management?"
 
-[node name="Stress_Val" type="SpinBox" parent="Panel/MainVBox/TabContainer/Input_VBox/HBox_Stress"]
+[node name="Stress_Space" type="Control" parent="Panel/MainVBox/TabContainer/Input/HBox_Stress"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Stress_Val" type="SpinBox" parent="Panel/MainVBox/TabContainer/Input/HBox_Stress"]
 layout_mode = 2
 min_value = 1.0
 max_value = 10.0
 value = 5.0
 
-[node name="HBox_Activity" type="HBoxContainer" parent="Panel/MainVBox/TabContainer/Input_VBox"]
+[node name="HBox_Activity" type="HBoxContainer" parent="Panel/MainVBox/TabContainer/Input"]
 layout_mode = 2
 
-[node name="Activity_Label" type="Label" parent="Panel/MainVBox/TabContainer/Input_VBox/HBox_Activity"]
+[node name="Activity_Label" type="Label" parent="Panel/MainVBox/TabContainer/Input/HBox_Activity"]
 layout_mode = 2
 text = "Your physical activity levels?"
 
-[node name="Activity_Val" type="SpinBox" parent="Panel/MainVBox/TabContainer/Input_VBox/HBox_Activity"]
+[node name="activity_Space" type="Control" parent="Panel/MainVBox/TabContainer/Input/HBox_Activity"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Activity_Val" type="SpinBox" parent="Panel/MainVBox/TabContainer/Input/HBox_Activity"]
 layout_mode = 2
 min_value = 1.0
 max_value = 10.0
 value = 5.0
 
-[node name="Button" type="Button" parent="Panel/MainVBox/TabContainer/Input_VBox"]
+[node name="Input_Button" type="Button" parent="Panel/MainVBox/TabContainer/Input"]
 layout_mode = 2
-text = "Submit"
+text = "Confirm Values"
 
-[node name="ColorRect" type="ColorRect" parent="Panel/MainVBox/TabContainer"]
-layout_mode = 2
-color = Color(0.658824, 0.745098, 0.803922, 1)
-
-[node name="VtoHBox" type="HBoxContainer" parent="Panel/MainVBox/TabContainer/ColorRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 0.5
-offset_top = 40.0
-offset_right = 0.5
-offset_bottom = 168.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Food_Bar" type="TextureProgressBar" parent="Panel/MainVBox/TabContainer/ColorRect/VtoHBox"]
-material = SubResource("CanvasItemMaterial_uw1cm")
-layout_mode = 2
-max_value = 10.0
-value = 1.0
-fill_mode = 3
-texture_progress = SubResource("GradientTexture2D_1o40j")
-script = ExtResource("1_4hkrw")
-
-[node name="Water_Bar" type="TextureProgressBar" parent="Panel/MainVBox/TabContainer/ColorRect/VtoHBox"]
-layout_mode = 2
-max_value = 10.0
-value = 1.0
-fill_mode = 3
-texture_progress = SubResource("GradientTexture2D_r6lgx")
-
-[node name="Sleep_Bar" type="TextureProgressBar" parent="Panel/MainVBox/TabContainer/ColorRect/VtoHBox"]
-layout_mode = 2
-max_value = 10.0
-value = 10.0
-fill_mode = 3
-texture_progress = SubResource("GradientTexture2D_utspr")
-
-[node name="Stress_Bar" type="TextureProgressBar" parent="Panel/MainVBox/TabContainer/ColorRect/VtoHBox"]
-layout_mode = 2
-max_value = 10.0
-value = 1.0
-fill_mode = 3
-texture_progress = SubResource("GradientTexture2D_1och8")
-
-[node name="Activity_Bar" type="TextureProgressBar" parent="Panel/MainVBox/TabContainer/ColorRect/VtoHBox"]
-layout_mode = 2
-max_value = 10.0
-value = 10.0
-fill_mode = 3
-texture_progress = SubResource("GradientTexture2D_l6vmk")
-
-[connection signal="value_changed" from="Panel/MainVBox/TabContainer/Input_VBox/HBox_Food/Food_Val" to="Panel/MainVBox/TabContainer/ColorRect/VtoHBox/Food_Bar" method="_on_food_val_value_changed"]
+[connection signal="pressed" from="Panel/MainVBox/TabContainer/Input/Input_Button" to="Panel/MainVBox/TabContainer/Input" method="_on_input_button_pressed"]
