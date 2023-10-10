@@ -7,9 +7,6 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -1.0
-offset_right = -1352.0
-offset_bottom = -786.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -23,15 +20,9 @@ grow_vertical = 2
 
 [node name="MainVBox" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -282.5
-offset_top = -148.5
-offset_right = 282.5
-offset_bottom = 148.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -43,8 +34,8 @@ horizontal_alignment = 1
 [node name="TabContainer" type="TabContainer" parent="Panel/MainVBox"]
 layout_mode = 2
 size_flags_vertical = 3
-use_hidden_tabs_for_min_size = true
 tab_alignment = 1
+use_hidden_tabs_for_min_size = true
 
 [node name="Input" type="VBoxContainer" parent="Panel/MainVBox/TabContainer"]
 layout_mode = 2
