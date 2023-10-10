@@ -7,6 +7,9 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -1.0
+offset_right = -1352.0
+offset_bottom = -786.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -20,9 +23,15 @@ grow_vertical = 2
 
 [node name="MainVBox" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -282.5
+offset_top = -148.5
+offset_right = 282.5
+offset_bottom = 148.5
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -35,6 +44,7 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 use_hidden_tabs_for_min_size = true
+tab_alignment = 1
 
 [node name="Input" type="VBoxContainer" parent="Panel/MainVBox/TabContainer"]
 layout_mode = 2
@@ -45,7 +55,7 @@ layout_mode = 2
 
 [node name="Food_Label" type="Label" parent="Panel/MainVBox/TabContainer/Input/HBox_Food"]
 layout_mode = 2
-text = "How is your food?"
+text = "Your eating habits?"
 
 [node name="Food_spacer" type="Control" parent="Panel/MainVBox/TabContainer/Input/HBox_Food"]
 layout_mode = 2
@@ -62,7 +72,7 @@ layout_mode = 2
 
 [node name="Water_Label" type="Label" parent="Panel/MainVBox/TabContainer/Input/HBox_Water"]
 layout_mode = 2
-text = "How is your water?"
+text = "Your water intake?"
 
 [node name="Water_space" type="Control" parent="Panel/MainVBox/TabContainer/Input/HBox_Water"]
 layout_mode = 2
@@ -79,7 +89,7 @@ layout_mode = 2
 
 [node name="Sleep_Label" type="Label" parent="Panel/MainVBox/TabContainer/Input/HBox_Sleep"]
 layout_mode = 2
-text = "How was your sleep?"
+text = "Your quality of sleep?"
 
 [node name="sleep_space" type="Control" parent="Panel/MainVBox/TabContainer/Input/HBox_Sleep"]
 layout_mode = 2
@@ -96,7 +106,7 @@ layout_mode = 2
 
 [node name="Stress_Label" type="Label" parent="Panel/MainVBox/TabContainer/Input/HBox_Stress"]
 layout_mode = 2
-text = "How stressed are you?"
+text = "Your stress management?"
 
 [node name="Stress_Space" type="Control" parent="Panel/MainVBox/TabContainer/Input/HBox_Stress"]
 layout_mode = 2
@@ -113,7 +123,7 @@ layout_mode = 2
 
 [node name="Activity_Label" type="Label" parent="Panel/MainVBox/TabContainer/Input/HBox_Activity"]
 layout_mode = 2
-text = "How is your physical activity?"
+text = "Your physical activity levels?"
 
 [node name="activity_Space" type="Control" parent="Panel/MainVBox/TabContainer/Input/HBox_Activity"]
 layout_mode = 2
