@@ -7,22 +7,24 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1.0
-offset_top = 2.0
-offset_right = 1.0
-offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="."]
-layout_mode = 0
-offset_right = 410.0
-offset_bottom = 237.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="MainVBox" type="VBoxContainer" parent="Panel"]
-layout_mode = 2
-offset_right = 409.0
-offset_bottom = 232.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Title" type="Label" parent="Panel/MainVBox"]
 layout_mode = 2
@@ -31,6 +33,7 @@ horizontal_alignment = 1
 
 [node name="TabContainer" type="TabContainer" parent="Panel/MainVBox"]
 layout_mode = 2
+size_flags_vertical = 3
 use_hidden_tabs_for_min_size = true
 
 [node name="Input" type="VBoxContainer" parent="Panel/MainVBox/TabContainer"]
@@ -125,5 +128,144 @@ value = 5.0
 [node name="Input_Button" type="Button" parent="Panel/MainVBox/TabContainer/Input"]
 layout_mode = 2
 text = "Confirm Values"
+
+[node name="Panel" type="Panel" parent="Panel/MainVBox/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="10_out" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
+position = Vector2(199, 75)
+polygon = PackedVector2Array(20, -69, -61, -18, -34, 87, 93, 89, 106, -26)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="10_in" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
+position = Vector2(42, -39)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(178, 49, 101, 98, 128, 197, 246, 200, 259, 90)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="8_out" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
+position = Vector2(211, 65)
+polygon = PackedVector2Array(8, -35, -51, 0, -29, 80, 64, 80, 75, -3)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="8_in" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
+position = Vector2(227, 93)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-7, -60, 51, -30, 44, 47, -42, 48, -62, -27)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="6_out" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
+position = Vector2(43, -7)
+polygon = PackedVector2Array(178, 55, 137, 80, 155, 135, 217, 135, 223, 76)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="6_in" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
+position = Vector2(43, -2)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(178, 55, 142, 77, 158, 126, 214, 127, 218, 75)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="4_out" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
+position = Vector2(44, 7)
+polygon = PackedVector2Array(178, 55, 150, 71, 164, 110, 204, 112, 208, 73)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="4_in" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
+position = Vector2(59, -12)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(162, 78, 139, 92, 153, 125, 184, 127, 189, 93)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="2_out" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
+position = Vector2(37, -10)
+polygon = PackedVector2Array(184, 84, 169, 91, 181, 118, 203, 120, 204, 95)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="2_in" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
+position = Vector2(36, -12)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(185, 90, 173, 94, 184, 118, 202, 120, 202, 99)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Food_quad" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
+position = Vector2(229, 20)
+color = Color(0, 1, 0, 0.501961)
+invert_border = 0.1
+polygon = PackedVector2Array(-9, -9, 25, 15, -3, 76, -29, 37)
+
+[node name="Water_quad" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
+position = Vector2(57, 20)
+color = Color(0, 1, 1, 0.501961)
+polygon = PackedVector2Array(196, 15, 169, 73, 202, 76, 228, 42)
+
+[node name="Sleep_quad" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
+position = Vector2(44, 34)
+color = Color(0.870588, 0.337255, 0.980392, 0.501961)
+polygon = PackedVector2Array(215, 62, 183, 59, 185, 75, 205, 84)
+
+[node name="Stress_quad" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
+position = Vector2(2, 1)
+color = Color(1, 0, 0, 0.501961)
+polygon = PackedVector2Array(225, 94, 227, 109, 219, 104, 210, 99)
+
+[node name="Activity_quad" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
+position = Vector2(-5, -5)
+color = Color(1, 1, 0, 0.501961)
+polygon = PackedVector2Array(205, 61, 200, 83, 216, 105, 230, 100)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MainVBox/TabContainer/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="10" type="Label" parent="Panel/MainVBox/TabContainer/Panel/VBoxContainer"]
+layout_mode = 2
+text = "10
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="8" type="Label" parent="Panel/MainVBox/TabContainer/Panel/VBoxContainer"]
+layout_mode = 2
+text = "8
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="6" type="Label" parent="Panel/MainVBox/TabContainer/Panel/VBoxContainer"]
+layout_mode = 2
+text = "6
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="4" type="Label" parent="Panel/MainVBox/TabContainer/Panel/VBoxContainer"]
+layout_mode = 2
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="2" type="Label" parent="Panel/MainVBox/TabContainer/Panel/VBoxContainer"]
+layout_mode = 2
+text = "2
+"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Panel/MainVBox/TabContainer/Input/Input_Button" to="Panel/MainVBox/TabContainer/Input" method="_on_input_button_pressed"]

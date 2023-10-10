@@ -1,6 +1,10 @@
 extends VBoxContainer
 
 # Called when the node enters the scene tree for the first time.
+
+var water_val: SpinBox
+var food_val: SpinBox
+
 func _ready():
 	# get the list of values objects?
 	pass
