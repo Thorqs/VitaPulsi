@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cf6llchqikm33"]
+[gd_scene load_steps=3 format=3 uid="uid://cf6llchqikm33"]
 
 [ext_resource type="Script" path="res://Input.gd" id="1_n1rqy"]
+[ext_resource type="Script" path="res://radar_display.gd" id="2_m2p0q"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -38,6 +39,7 @@ tab_alignment = 1
 use_hidden_tabs_for_min_size = true
 
 [node name="Input" type="VBoxContainer" parent="Panel/MainVBox/TabContainer"]
+visible = false
 layout_mode = 2
 script = ExtResource("1_n1rqy")
 
@@ -131,72 +133,62 @@ layout_mode = 2
 text = "Confirm Values"
 
 [node name="Panel" type="Panel" parent="Panel/MainVBox/TabContainer"]
-visible = false
 layout_mode = 2
+script = ExtResource("2_m2p0q")
 
-[node name="10_out" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
+[node name="10w" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
 position = Vector2(199, 75)
 polygon = PackedVector2Array(20, -69, -61, -18, -34, 87, 93, 89, 106, -26)
-metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="10_in" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
+[node name="9b" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
 position = Vector2(42, -39)
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(178, 49, 101, 98, 128, 197, 246, 200, 259, 90)
-metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="8_out" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
+[node name="8w" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
 position = Vector2(211, 65)
 polygon = PackedVector2Array(8, -35, -51, 0, -29, 80, 64, 80, 75, -3)
-metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="8_in" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
+[node name="7b" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
 position = Vector2(227, 93)
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(-7, -60, 51, -30, 44, 47, -42, 48, -62, -27)
-metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="6_out" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
+[node name="6w" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
 position = Vector2(43, -7)
 polygon = PackedVector2Array(178, 55, 137, 80, 155, 135, 217, 135, 223, 76)
-metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="6_in" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
+[node name="5b" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
 position = Vector2(43, -2)
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(178, 55, 142, 77, 158, 126, 214, 127, 218, 75)
-metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="4_out" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
+[node name="4w" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
 position = Vector2(44, 7)
 polygon = PackedVector2Array(178, 55, 150, 71, 164, 110, 204, 112, 208, 73)
-metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="4_in" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
+[node name="3b" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
 position = Vector2(59, -12)
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(162, 78, 139, 92, 153, 125, 184, 127, 189, 93)
-metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="2_out" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
+[node name="2w" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
 position = Vector2(37, -10)
 polygon = PackedVector2Array(184, 84, 169, 91, 181, 118, 203, 120, 204, 95)
-metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="2_in" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
+[node name="1b" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
 position = Vector2(36, -12)
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(185, 90, 173, 94, 184, 118, 202, 120, 202, 99)
-metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
 [node name="Food_quad" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
@@ -242,12 +234,20 @@ text = "10
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="v_space" type="Control" parent="Panel/MainVBox/TabContainer/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
 [node name="8" type="Label" parent="Panel/MainVBox/TabContainer/Panel/VBoxContainer"]
 layout_mode = 2
 text = "8
 "
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="v_space2" type="Control" parent="Panel/MainVBox/TabContainer/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
 
 [node name="6" type="Label" parent="Panel/MainVBox/TabContainer/Panel/VBoxContainer"]
 layout_mode = 2
@@ -256,11 +256,19 @@ text = "6
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="v_space3" type="Control" parent="Panel/MainVBox/TabContainer/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+
 [node name="4" type="Label" parent="Panel/MainVBox/TabContainer/Panel/VBoxContainer"]
 layout_mode = 2
 text = "4"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="v_space4" type="Control" parent="Panel/MainVBox/TabContainer/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
 
 [node name="2" type="Label" parent="Panel/MainVBox/TabContainer/Panel/VBoxContainer"]
 layout_mode = 2
