@@ -38,6 +38,7 @@ tab_alignment = 1
 use_hidden_tabs_for_min_size = true
 
 [node name="Input" type="VBoxContainer" parent="Panel/MainVBox/TabContainer"]
+visible = false
 layout_mode = 2
 script = ExtResource("1_n1rqy")
 
