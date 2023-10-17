@@ -1,9 +1,6 @@
 
 extends VBoxContainer
 
-var save_file_path = "user://save/"
-var save_file_name = "UserData.tres"
-
 var userData = UserData.new()
 
 var Food : int
@@ -13,12 +10,7 @@ var Stress : int
 var Activity : int
 
 func _ready():
-	verify_save_dir(save_file_path)
-	if ResourceLoader.exists(save_file_path + save_file_name):
-		userData = ResourceLoader.load(save_file_path + save_file_name)
-
-func verify_save_dir(path : String):
-	DirAccess.make_dir_absolute(path)
+	userData.load_data()
 
 func _on_input_button_pressed():
 	Food = get_node("HBox_Food/Food_Val").value
@@ -31,4 +23,4 @@ func _on_input_button_pressed():
 	userData.update_sleep(Sleep)
 	userData.update_stress(Stress)
 	userData.update_activity(Activity)
-	ResourceSaver.save(userData, save_file_path + save_file_name)
+	userData.save_data()
