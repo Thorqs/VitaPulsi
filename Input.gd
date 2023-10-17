@@ -14,6 +14,8 @@ var Activity : int
 
 func _ready():
 	verify_save_dir(save_file_path)
+	if ResourceLoader.exists(save_file_path + save_file_name):
+		userData = ResourceLoader.load(save_file_path + save_file_name)
 
 func verify_save_dir(path : String):
 	DirAccess.make_dir_absolute(path)
