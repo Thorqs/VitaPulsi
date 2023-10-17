@@ -68,21 +68,21 @@ func _process(_delta):
 	var activity_peak = pos4*radar_scaling*get_node("../Input/HBox_Activity/Activity_Val").value
 	
 	food_quad.polygon[0] = food_peak
-	food_quad.polygon[1] = (food_peak + water_peak)/2
-	food_quad.polygon[3] = (food_peak + activity_peak)/2
+	food_quad.polygon[1] = (food_peak + water_peak)/4
+	food_quad.polygon[3] = (food_peak + activity_peak)/4
 	
 	water_quad.polygon[0] = water_peak
-	water_quad.polygon[1] = (water_peak + sleep_peak)/2
-	water_quad.polygon[3] = (water_peak + food_peak)/2
+	water_quad.polygon[1] = (water_peak + sleep_peak)/4
+	water_quad.polygon[3] = (water_peak + food_peak)/4
 	
 	sleep_quad.polygon[0] = sleep_peak
-	sleep_quad.polygon[1] = (sleep_peak + stress_peak)/2
-	sleep_quad.polygon[3] = (sleep_peak + water_peak)/2
+	sleep_quad.polygon[1] = (sleep_peak + stress_peak)/4
+	sleep_quad.polygon[3] = (sleep_peak + water_peak)/4
 	
 	stress_quad.polygon[0] = stress_peak
-	stress_quad.polygon[1] = (stress_peak + activity_peak)/2
-	stress_quad.polygon[3] = (stress_peak + sleep_peak)/2
+	stress_quad.polygon[1] = (stress_peak + activity_peak)/4
+	stress_quad.polygon[3] = (stress_peak + sleep_peak)/4
 	
 	activity_quad.polygon[0] = activity_peak
-	activity_quad.polygon[1] = (activity_peak + food_peak)/2
-	activity_quad.polygon[3] = (activity_peak + stress_peak)/2
+	activity_quad.polygon[1] = (activity_peak + food_peak)/4
+	activity_quad.polygon[3] = (activity_peak + stress_peak)/4

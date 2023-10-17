@@ -9,15 +9,15 @@ class_name UserData
 
 func update_food(value : int):
 	food_hist.append(value)
-	
+
 func update_water(value : int):
 	water_hist.append(value)
-	
+
 func update_sleep(value : int):
 	sleep_hist.append(value)
 	
-func update_stress(value: int):
+func update_stress(value : int):
 	stress_hist.append(value)
 	
-func update_active(value : int):
+func update_activity(value : int):
 	active_hist.append(value)
