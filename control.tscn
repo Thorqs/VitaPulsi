@@ -193,28 +193,28 @@ metadata/_edit_lock_ = true
 
 [node name="Food_quad" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
 position = Vector2(229, 20)
-color = Color(0, 1, 0, 0.501961)
+color = Color(0, 1, 0, 0.705882)
 invert_border = 0.1
 polygon = PackedVector2Array(-9, -9, 25, 15, -3, 76, -29, 37)
 
 [node name="Water_quad" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
 position = Vector2(57, 20)
-color = Color(0, 1, 1, 0.501961)
+color = Color(0, 1, 1, 0.705882)
 polygon = PackedVector2Array(196, 15, 169, 73, 202, 76, 228, 42)
 
 [node name="Sleep_quad" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
 position = Vector2(44, 34)
-color = Color(0.870588, 0.337255, 0.980392, 0.501961)
+color = Color(0.870588, 0.337255, 0.980392, 0.705882)
 polygon = PackedVector2Array(215, 62, 183, 59, 185, 75, 205, 84)
 
 [node name="Stress_quad" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
 position = Vector2(2, 1)
-color = Color(1, 0, 0, 0.501961)
+color = Color(1, 0, 0, 0.705882)
 polygon = PackedVector2Array(225, 94, 227, 109, 219, 104, 210, 99)
 
 [node name="Activity_quad" type="Polygon2D" parent="Panel/MainVBox/TabContainer/Panel"]
 position = Vector2(-5, -5)
-color = Color(1, 1, 0, 0.501961)
+color = Color(1, 1, 0, 0.705882)
 polygon = PackedVector2Array(205, 61, 200, 83, 216, 105, 230, 100)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/MainVBox/TabContainer/Panel"]
