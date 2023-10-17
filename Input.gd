@@ -1,7 +1,7 @@
 
 extends VBoxContainer
 
-var userData = UserData.new()
+@export var userData = UserData.new()
 
 var Food : int
 var Water : int

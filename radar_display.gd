@@ -16,8 +16,11 @@ const pos2 = Vector2(sin(0.8*PI), -cos(0.8*PI))
 const pos3 = Vector2(sin(1.2*PI), -cos(1.2*PI))
 const pos4 = Vector2(sin(1.6*PI), -cos(1.6*PI))
 
+var data = UserData
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	data = get_node("../Input").userData
 	# Make an array of offset rings
 	rings.append(get_node("1b"))
 	rings.append(get_node("2w"))
@@ -61,11 +64,37 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	var food_peak = pos0*radar_scaling*get_node("../Input/HBox_Food/Food_Val").value
-	var water_peak = pos1*radar_scaling*get_node("../Input/HBox_Water/Water_Val").value
-	var sleep_peak = pos2*radar_scaling*get_node("../Input/HBox_Sleep/Sleep_Val").value
-	var stress_peak = pos3*radar_scaling*get_node("../Input/HBox_Stress/Stress_Val").value
-	var activity_peak = pos4*radar_scaling*get_node("../Input/HBox_Activity/Activity_Val").value
+	var food_mean = 0
+	var water_mean = 0
+	var sleep_mean = 0
+	var stress_mean = 0
+	var active_mean = 0
+	if len(data.food_hist) > 0:
+		for entry in data.food_hist:
+			food_mean += entry
+		food_mean = food_mean/len(data.food_hist)
+		
+		for entry in data.water_hist:
+			water_mean += entry
+		water_mean = water_mean/len(data.water_hist)
+		
+		for entry in data.sleep_hist:
+			sleep_mean += entry
+		sleep_mean = sleep_mean/len(data.sleep_hist)
+		
+		for entry in data.stress_hist:
+			stress_mean += entry
+		stress_mean = stress_mean/len(data.stress_hist)
+		
+		for entry in data.active_hist:
+			active_mean += entry
+		active_mean = active_mean/len(data.active_hist)
+	
+	var food_peak = pos0*radar_scaling*food_mean
+	var water_peak = pos1*radar_scaling*water_mean
+	var sleep_peak = pos2*radar_scaling*sleep_mean
+	var stress_peak = pos3*radar_scaling*stress_mean
+	var activity_peak = pos4*radar_scaling*active_mean
 	
 	food_quad.polygon[0] = food_peak
 	food_quad.polygon[1] = (food_peak + water_peak)/4
