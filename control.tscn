@@ -27,10 +27,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Title_Spacer_Up" type="Label" parent="Panel/MainVBox"]
+layout_mode = 2
+
 [node name="Title" type="Label" parent="Panel/MainVBox"]
 layout_mode = 2
+theme_type_variation = &"HeaderMedium"
 text = "DAT Biotracker"
 horizontal_alignment = 1
+
+[node name="Title_Spacer_Down" type="Label" parent="Panel/MainVBox"]
+layout_mode = 2
 
 [node name="TabContainer" type="TabContainer" parent="Panel/MainVBox"]
 layout_mode = 2
@@ -39,16 +46,36 @@ tab_alignment = 1
 use_hidden_tabs_for_min_size = true
 
 [node name="Input" type="VBoxContainer" parent="Panel/MainVBox/TabContainer"]
-visible = false
 layout_mode = 2
 script = ExtResource("1_n1rqy")
+
+[node name="Instruct_Spacer_Label" type="Label" parent="Panel/MainVBox/TabContainer/Input"]
+layout_mode = 2
+
+[node name="HBOX_Instruct_Label" type="HBoxContainer" parent="Panel/MainVBox/TabContainer/Input"]
+layout_mode = 2
+
+[node name="Instruct_Left_Spacer" type="Control" parent="Panel/MainVBox/TabContainer/Input/HBOX_Instruct_Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Instruct_Label" type="Label" parent="Panel/MainVBox/TabContainer/Input/HBOX_Instruct_Label"]
+layout_mode = 2
+text = "On a scale of 1 to 10, how would you rate your:"
+
+[node name="Instruct_Right_Spacer" type="Control" parent="Panel/MainVBox/TabContainer/Input/HBOX_Instruct_Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Instruct_Spacer_Label2" type="Label" parent="Panel/MainVBox/TabContainer/Input"]
+layout_mode = 2
 
 [node name="HBox_Food" type="HBoxContainer" parent="Panel/MainVBox/TabContainer/Input"]
 layout_mode = 2
 
 [node name="Food_Label" type="Label" parent="Panel/MainVBox/TabContainer/Input/HBox_Food"]
 layout_mode = 2
-text = "Your eating habits?"
+text = "Eating habits?"
 
 [node name="Food_spacer" type="Control" parent="Panel/MainVBox/TabContainer/Input/HBox_Food"]
 layout_mode = 2
@@ -60,12 +87,45 @@ min_value = 1.0
 max_value = 10.0
 value = 5.0
 
+[node name="HBOX_Bad_Food_Label" type="HBoxContainer" parent="Panel/MainVBox/TabContainer/Input"]
+layout_mode = 2
+
+[node name="Bad_Food_Spacer1" type="Control" parent="Panel/MainVBox/TabContainer/Input/HBOX_Bad_Food_Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Bad_Food_Label" type="Label" parent="Panel/MainVBox/TabContainer/Input/HBOX_Bad_Food_Label"]
+layout_mode = 2
+text = "One would be a very poor diet, low in nutritional value."
+
+[node name="Bad_Food_Spacer2" type="Control" parent="Panel/MainVBox/TabContainer/Input/HBOX_Bad_Food_Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBOX_Good_Food_Label" type="HBoxContainer" parent="Panel/MainVBox/TabContainer/Input"]
+layout_mode = 2
+
+[node name="Good_Food_Spacer1" type="Control" parent="Panel/MainVBox/TabContainer/Input/HBOX_Good_Food_Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Good_Food_Label" type="Label" parent="Panel/MainVBox/TabContainer/Input/HBOX_Good_Food_Label"]
+layout_mode = 2
+text = "Ten would be a perfect diet, meeting every need for that person."
+
+[node name="Good_Food_Spacer2" type="Control" parent="Panel/MainVBox/TabContainer/Input/HBOX_Good_Food_Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Food_Explain_Spacer" type="Label" parent="Panel/MainVBox/TabContainer/Input"]
+layout_mode = 2
+
 [node name="HBox_Water" type="HBoxContainer" parent="Panel/MainVBox/TabContainer/Input"]
 layout_mode = 2
 
 [node name="Water_Label" type="Label" parent="Panel/MainVBox/TabContainer/Input/HBox_Water"]
 layout_mode = 2
-text = "Your water intake?"
+text = "Water intake?"
 
 [node name="Water_space" type="Control" parent="Panel/MainVBox/TabContainer/Input/HBox_Water"]
 layout_mode = 2
@@ -77,12 +137,45 @@ min_value = 1.0
 max_value = 10.0
 value = 5.0
 
+[node name="HBOX_Bad_Water_Label" type="HBoxContainer" parent="Panel/MainVBox/TabContainer/Input"]
+layout_mode = 2
+
+[node name="Bad_Water_Spacer" type="Control" parent="Panel/MainVBox/TabContainer/Input/HBOX_Bad_Water_Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Bad_Water_Label" type="Label" parent="Panel/MainVBox/TabContainer/Input/HBOX_Bad_Water_Label"]
+layout_mode = 2
+text = "One would likely be too little, or no, water."
+
+[node name="Bad_Water_Spacer2" type="Control" parent="Panel/MainVBox/TabContainer/Input/HBOX_Bad_Water_Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBOX_Good_Water_Label" type="HBoxContainer" parent="Panel/MainVBox/TabContainer/Input"]
+layout_mode = 2
+
+[node name="Good_Water_Spacer1" type="Control" parent="Panel/MainVBox/TabContainer/Input/HBOX_Good_Water_Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Good_Water_Label" type="Label" parent="Panel/MainVBox/TabContainer/Input/HBOX_Good_Water_Label"]
+layout_mode = 2
+text = "Ten would be the perfect amount of water for that person."
+
+[node name="Good_Water_Spacer2" type="Control" parent="Panel/MainVBox/TabContainer/Input/HBOX_Good_Water_Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Water_Explain_Spacer" type="Label" parent="Panel/MainVBox/TabContainer/Input"]
+layout_mode = 2
+
 [node name="HBox_Sleep" type="HBoxContainer" parent="Panel/MainVBox/TabContainer/Input"]
 layout_mode = 2
 
 [node name="Sleep_Label" type="Label" parent="Panel/MainVBox/TabContainer/Input/HBox_Sleep"]
 layout_mode = 2
-text = "Your quality of sleep?"
+text = "Quality of sleep?"
 
 [node name="sleep_space" type="Control" parent="Panel/MainVBox/TabContainer/Input/HBox_Sleep"]
 layout_mode = 2
@@ -94,12 +187,45 @@ min_value = 1.0
 max_value = 10.0
 value = 5.0
 
+[node name="HBOX_Bad_Sleep_Label" type="HBoxContainer" parent="Panel/MainVBox/TabContainer/Input"]
+layout_mode = 2
+
+[node name="Bad_Sleep_Spacer" type="Control" parent="Panel/MainVBox/TabContainer/Input/HBOX_Bad_Sleep_Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Bad_Sleep_Label" type="Label" parent="Panel/MainVBox/TabContainer/Input/HBOX_Bad_Sleep_Label"]
+layout_mode = 2
+text = "One would likely be too little, or no, sleep."
+
+[node name="Bad_Sleep_Spacer2" type="Control" parent="Panel/MainVBox/TabContainer/Input/HBOX_Bad_Sleep_Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBOX_Good_Sleep_Label" type="HBoxContainer" parent="Panel/MainVBox/TabContainer/Input"]
+layout_mode = 2
+
+[node name="Good_Sleep_Spacer1" type="Control" parent="Panel/MainVBox/TabContainer/Input/HBOX_Good_Sleep_Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Good_Sleep_Label" type="Label" parent="Panel/MainVBox/TabContainer/Input/HBOX_Good_Sleep_Label"]
+layout_mode = 2
+text = "Ten would be the perfect amount of sleep for that person."
+
+[node name="Good_Sleep_Spacer2" type="Control" parent="Panel/MainVBox/TabContainer/Input/HBOX_Good_Sleep_Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Sleep_Explain_Spacer" type="Label" parent="Panel/MainVBox/TabContainer/Input"]
+layout_mode = 2
+
 [node name="HBox_Stress" type="HBoxContainer" parent="Panel/MainVBox/TabContainer/Input"]
 layout_mode = 2
 
 [node name="Stress_Label" type="Label" parent="Panel/MainVBox/TabContainer/Input/HBox_Stress"]
 layout_mode = 2
-text = "Your stress management?"
+text = "Ability to manage stress?"
 
 [node name="Stress_Space" type="Control" parent="Panel/MainVBox/TabContainer/Input/HBox_Stress"]
 layout_mode = 2
@@ -111,12 +237,45 @@ min_value = 1.0
 max_value = 10.0
 value = 5.0
 
+[node name="HBOX_Bad_Stress_Label" type="HBoxContainer" parent="Panel/MainVBox/TabContainer/Input"]
+layout_mode = 2
+
+[node name="Bad_Stress_Spacer" type="Control" parent="Panel/MainVBox/TabContainer/Input/HBOX_Bad_Stress_Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Bad_Stress_Label" type="Label" parent="Panel/MainVBox/TabContainer/Input/HBOX_Bad_Stress_Label"]
+layout_mode = 2
+text = "One would be you are unable to manage current stressors."
+
+[node name="Bad_Stress_Spacer2" type="Control" parent="Panel/MainVBox/TabContainer/Input/HBOX_Bad_Stress_Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBOX_Good_Stress_Label" type="HBoxContainer" parent="Panel/MainVBox/TabContainer/Input"]
+layout_mode = 2
+
+[node name="Good_Stress_Spacer1" type="Control" parent="Panel/MainVBox/TabContainer/Input/HBOX_Good_Stress_Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Good_Stress_Label" type="Label" parent="Panel/MainVBox/TabContainer/Input/HBOX_Good_Stress_Label"]
+layout_mode = 2
+text = "Ten would be you are perfectly able to manage current stressors."
+
+[node name="Good_Stress_Spacer2" type="Control" parent="Panel/MainVBox/TabContainer/Input/HBOX_Good_Stress_Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Stress_Explain_Spacer" type="Label" parent="Panel/MainVBox/TabContainer/Input"]
+layout_mode = 2
+
 [node name="HBox_Activity" type="HBoxContainer" parent="Panel/MainVBox/TabContainer/Input"]
 layout_mode = 2
 
 [node name="Activity_Label" type="Label" parent="Panel/MainVBox/TabContainer/Input/HBox_Activity"]
 layout_mode = 2
-text = "Your physical activity levels?"
+text = "Physical activity levels?"
 
 [node name="activity_Space" type="Control" parent="Panel/MainVBox/TabContainer/Input/HBox_Activity"]
 layout_mode = 2
@@ -128,11 +287,45 @@ min_value = 1.0
 max_value = 10.0
 value = 5.0
 
+[node name="HBOX_Bad_Activity_Label" type="HBoxContainer" parent="Panel/MainVBox/TabContainer/Input"]
+layout_mode = 2
+
+[node name="Bad_Activity_Spacer" type="Control" parent="Panel/MainVBox/TabContainer/Input/HBOX_Bad_Activity_Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Bad_Activity_Label" type="Label" parent="Panel/MainVBox/TabContainer/Input/HBOX_Bad_Activity_Label"]
+layout_mode = 2
+text = "One would be too little, or too much, activity."
+
+[node name="Bad_Activity_Spacer2" type="Control" parent="Panel/MainVBox/TabContainer/Input/HBOX_Bad_Activity_Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBOX_Good_Activity_Label" type="HBoxContainer" parent="Panel/MainVBox/TabContainer/Input"]
+layout_mode = 2
+
+[node name="Good_Activity_Spacer1" type="Control" parent="Panel/MainVBox/TabContainer/Input/HBOX_Good_Activity_Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Good_Activity_Label" type="Label" parent="Panel/MainVBox/TabContainer/Input/HBOX_Good_Activity_Label"]
+layout_mode = 2
+text = "Ten would be the perfect amount of activity for that person."
+
+[node name="Good_Activity_Spacer2" type="Control" parent="Panel/MainVBox/TabContainer/Input/HBOX_Good_Activity_Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Activity_Explain_Spacer" type="Label" parent="Panel/MainVBox/TabContainer/Input"]
+layout_mode = 2
+
 [node name="Input_Button" type="Button" parent="Panel/MainVBox/TabContainer/Input"]
 layout_mode = 2
 text = "Confirm Values"
 
 [node name="Output" type="Panel" parent="Panel/MainVBox/TabContainer"]
+visible = false
 layout_mode = 2
 script = ExtResource("2_m2p0q")
 
@@ -276,9 +469,5 @@ text = "2
 "
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Info" type="Panel" parent="Panel/MainVBox/TabContainer"]
-visible = false
-layout_mode = 2
 
 [connection signal="pressed" from="Panel/MainVBox/TabContainer/Input/Input_Button" to="Panel/MainVBox/TabContainer/Input" method="_on_input_button_pressed"]
