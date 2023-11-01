@@ -31,9 +31,25 @@ func update_water(value : int):
 
 func update_sleep(value : int):
 	sleep_hist.append(value)
-	
+
 func update_stress(value : int):
 	stress_hist.append(value)
-	
+
 func update_activity(value : int):
 	active_hist.append(value)
+
+func clear_food_hist():
+	food_hist.clear()
+
+func clear_water_hist():
+	water_hist.clear()
+
+func clear_sleep_hist():
+	sleep_hist.clear()
+
+func clear_stress_hist():
+	stress_hist.clear()
+
+func clear_active_hist():
+	active_hist.clear()
+
