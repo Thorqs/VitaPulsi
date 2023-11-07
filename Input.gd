@@ -26,10 +26,12 @@ func _on_input_button_pressed():
 	userData.save_data()
 
 func _on_clear_button_pressed():
+	
+	
+func _on_confirm_clear_dialog():
 	userData.clear_food_hist()
 	userData.clear_water_hist()
 	userData.clear_sleep_hist()
 	userData.clear_stress_hist()
 	userData.clear_active_hist()
 	userData.save_data()
-	
