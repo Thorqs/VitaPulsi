@@ -37,6 +37,7 @@ text = "DAT Biotracker"
 horizontal_alignment = 1
 
 [node name="Title_Spacer_Down" type="Label" parent="Panel/MainVBox"]
+modulate = Color(0.745098, 0.137255, 0.329412, 1)
 layout_mode = 2
 
 [node name="TabContainer" type="TabContainer" parent="Panel/MainVBox"]
@@ -46,6 +47,7 @@ tab_alignment = 1
 use_hidden_tabs_for_min_size = true
 
 [node name="Input" type="VBoxContainer" parent="Panel/MainVBox/TabContainer"]
+visible = false
 layout_mode = 2
 script = ExtResource("1_n1rqy")
 
@@ -332,7 +334,6 @@ layout_mode = 2
 text = "Delete ALL Values"
 
 [node name="Output" type="Panel" parent="Panel/MainVBox/TabContainer"]
-visible = false
 layout_mode = 2
 script = ExtResource("2_m2p0q")
 
