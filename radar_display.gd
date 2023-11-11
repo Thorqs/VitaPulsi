@@ -7,6 +7,13 @@ var water_quad: Polygon2D
 var sleep_quad: Polygon2D
 var stress_quad: Polygon2D
 var activity_quad: Polygon2D
+
+var food_label: Label
+var water_label: Label
+var sleep_label: Label
+var stress_label: Label
+var activity_label: Label
+
 const radar_offset = Vector2(270, 225)
 const radar_scaling = 20
 
@@ -71,6 +78,18 @@ func _ready():
 	activity_quad = get_node("Activity_quad")
 	activity_quad.position = radar_offset
 	activity_quad.polygon[2] = Vector2(0, 0)
+	
+	food_label = get_node("Food_label")
+	water_label = get_node("Water_label")
+	sleep_label = get_node("Sleep_label")
+	stress_label = get_node("Stress_label")
+	activity_label = get_node("Activity_label")
+	
+	food_label.position = radar_offset + 11*radar_scaling*pos0 - Vector2(food_label.size.x/2, food_label.size.y/4)
+	water_label.position = radar_offset + 11*radar_scaling*pos1 - Vector2(water_label.size.x/4, water_label.size.y/2)
+	sleep_label.position = radar_offset + 11*radar_scaling*pos2 - sleep_label.size/2
+	stress_label.position = radar_offset + 11*radar_scaling*pos3 - stress_label.size/2
+	activity_label.position = radar_offset + 11*radar_scaling*pos4 - Vector2(3*activity_label.size.x/4, activity_label.size.y/2)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
