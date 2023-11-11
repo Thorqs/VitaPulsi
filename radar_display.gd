@@ -1,6 +1,7 @@
 extends Panel
 
 var rings: Array
+var ring_labels: Array
 var food_quad: Polygon2D
 var water_quad: Polygon2D
 var sleep_quad: Polygon2D
@@ -33,6 +34,12 @@ func _ready():
 	rings.append(get_node("9b"))
 	rings.append(get_node("10w"))
 	
+	ring_labels.append(get_node("2"))
+	ring_labels.append(get_node("4"))
+	ring_labels.append(get_node("6"))
+	ring_labels.append(get_node("8"))
+	ring_labels.append(get_node("10"))
+	
 	# make sure they are in the corect position
 	for i in range (1, 11):
 		rings[i-1].position = radar_offset
@@ -41,6 +48,9 @@ func _ready():
 		rings[i-1].polygon[2] = radar_scaling*i*pos2
 		rings[i-1].polygon[3] = radar_scaling*i*pos3
 		rings[i-1].polygon[4] = radar_scaling*i*pos4
+	
+	for i in range (1, 6):
+		ring_labels[i-1].position = radar_offset + radar_scaling*(2*i-0.5)*(pos2+pos3)/2 - ring_labels[i-1].size/2
 	
 	food_quad = get_node("Food_quad")
 	food_quad.position = radar_offset
