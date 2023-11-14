@@ -1,4 +1,4 @@
-extends Panel
+extends Control
 
 var rings: Array
 var ring_labels: Array
