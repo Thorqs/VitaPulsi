@@ -14,7 +14,7 @@ var sleep_label: Label
 var stress_label: Label
 var activity_label: Label
 
-const radar_offset = Vector2(270, 225)
+const radar_offset = Vector2(270, 250)
 const radar_scaling = 20
 
 # corners of identity pentagons
@@ -144,3 +144,4 @@ func _process(_delta):
 	activity_quad.polygon[0] = activity_peak
 	activity_quad.polygon[1] = (activity_peak + food_peak)/4
 	activity_quad.polygon[3] = (activity_peak + stress_peak)/4
+
