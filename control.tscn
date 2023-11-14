@@ -78,6 +78,7 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Input" type="VBoxContainer" parent="Panel/MainVBox/IO"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
