@@ -418,16 +418,6 @@ position = Vector2(-5, -5)
 color = Color(1, 1, 0, 0.705882)
 polygon = PackedVector2Array(205, 61, 200, 83, 216, 105, 230, 100)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MainVBox/TabContainer/Output"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 40.0
-grow_horizontal = 2
-
 [node name="10" type="Label" parent="Panel/MainVBox/TabContainer/Output"]
 layout_mode = 0
 offset_right = 19.0
@@ -514,6 +504,119 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Activity"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MainVBox/TabContainer/Output"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -165.5
+offset_top = -301.0
+offset_right = 165.5
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="WYDW_Spacer" type="Label" parent="Panel/MainVBox/TabContainer/Output/VBoxContainer"]
+layout_mode = 2
+
+[node name="Question_WYDW" type="HBoxContainer" parent="Panel/MainVBox/TabContainer/Output/VBoxContainer"]
+layout_mode = 2
+
+[node name="WYDW_Q_L_Spacer" type="Control" parent="Panel/MainVBox/TabContainer/Output/VBoxContainer/Question_WYDW"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="WYDW_Q_Label" type="Label" parent="Panel/MainVBox/TabContainer/Output/VBoxContainer/Question_WYDW"]
+layout_mode = 2
+text = "You are doing the following well:"
+
+[node name="WYDW_Q_R_Spacer" type="Control" parent="Panel/MainVBox/TabContainer/Output/VBoxContainer/Question_WYDW"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Answer_WYDW" type="HBoxContainer" parent="Panel/MainVBox/TabContainer/Output/VBoxContainer"]
+layout_mode = 2
+
+[node name="WYDW_A_L_Spacer" type="Control" parent="Panel/MainVBox/TabContainer/Output/VBoxContainer/Answer_WYDW"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="WYDW_A_Label" type="Label" parent="Panel/MainVBox/TabContainer/Output/VBoxContainer/Answer_WYDW"]
+layout_mode = 2
+
+[node name="WYDW_A_R_Spacer" type="Control" parent="Panel/MainVBox/TabContainer/Output/VBoxContainer/Answer_WYDW"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="WYDW_Spacer2" type="Label" parent="Panel/MainVBox/TabContainer/Output/VBoxContainer"]
+layout_mode = 2
+
+[node name="Question_WYDOK" type="HBoxContainer" parent="Panel/MainVBox/TabContainer/Output/VBoxContainer"]
+layout_mode = 2
+
+[node name="WYDOK_Q_L_Spacer" type="Control" parent="Panel/MainVBox/TabContainer/Output/VBoxContainer/Question_WYDOK"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="WYDOK_Q_Label" type="Label" parent="Panel/MainVBox/TabContainer/Output/VBoxContainer/Question_WYDOK"]
+layout_mode = 2
+text = "You are doing the following okay:"
+
+[node name="WYDOK_Q_R_Spacer" type="Control" parent="Panel/MainVBox/TabContainer/Output/VBoxContainer/Question_WYDOK"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Answer_WYDOK" type="HBoxContainer" parent="Panel/MainVBox/TabContainer/Output/VBoxContainer"]
+layout_mode = 2
+
+[node name="WYDOK_A_L_Spacer" type="Control" parent="Panel/MainVBox/TabContainer/Output/VBoxContainer/Answer_WYDOK"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="WYDOK_A_Label" type="Label" parent="Panel/MainVBox/TabContainer/Output/VBoxContainer/Answer_WYDOK"]
+layout_mode = 2
+
+[node name="WYDOK_A_R_Spacer" type="Control" parent="Panel/MainVBox/TabContainer/Output/VBoxContainer/Answer_WYDOK"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="WYDOK_Spacer" type="Label" parent="Panel/MainVBox/TabContainer/Output/VBoxContainer"]
+layout_mode = 2
+
+[node name="Question_WYDP" type="HBoxContainer" parent="Panel/MainVBox/TabContainer/Output/VBoxContainer"]
+layout_mode = 2
+
+[node name="WYDP_Q_L_Spacer" type="Control" parent="Panel/MainVBox/TabContainer/Output/VBoxContainer/Question_WYDP"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="WYDP_Q_Label" type="Label" parent="Panel/MainVBox/TabContainer/Output/VBoxContainer/Question_WYDP"]
+layout_mode = 2
+text = "You are doing the following poorly:"
+
+[node name="WYDP_Q_R_Spacer" type="Control" parent="Panel/MainVBox/TabContainer/Output/VBoxContainer/Question_WYDP"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Answer_WYDP" type="HBoxContainer" parent="Panel/MainVBox/TabContainer/Output/VBoxContainer"]
+layout_mode = 2
+
+[node name="WYDP_A_L_Spacer" type="Control" parent="Panel/MainVBox/TabContainer/Output/VBoxContainer/Answer_WYDP"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="WYDP_A_Label" type="Label" parent="Panel/MainVBox/TabContainer/Output/VBoxContainer/Answer_WYDP"]
+layout_mode = 2
+
+[node name="WYDP_A_R_Spacer" type="Control" parent="Panel/MainVBox/TabContainer/Output/VBoxContainer/Answer_WYDP"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="WYDP_Spacer" type="Label" parent="Panel/MainVBox/TabContainer/Output/VBoxContainer"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
 
 [connection signal="pressed" from="Panel/MainVBox/TabContainer/Input/Input_Button" to="Panel/MainVBox/TabContainer/Input" method="_on_input_button_pressed"]
 [connection signal="pressed" from="Panel/MainVBox/TabContainer/Input/Clear_Button" to="Panel/MainVBox/TabContainer/Input" method="_on_clear_button_pressed"]
