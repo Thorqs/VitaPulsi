@@ -92,7 +92,8 @@ func _ready():
 	activity_label.position = radar_offset + 11*radar_scaling*pos4 - Vector2(3*activity_label.size.x/4, activity_label.size.y/2)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+#func _process(_delta):
+func update_output():
 	var food_mean = 0
 	var water_mean = 0
 	var sleep_mean = 0

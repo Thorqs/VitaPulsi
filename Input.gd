@@ -23,7 +23,7 @@ func _on_input_button_pressed():
 	userData.update_sleep(Sleep)
 	userData.update_stress(Stress)
 	userData.update_activity(Activity)
-	userData.save_data()	
+	userData.save_data()
 	
 func _on_clear_button_pressed():
 	userData.clear_food_hist()
