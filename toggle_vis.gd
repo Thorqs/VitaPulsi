@@ -11,7 +11,7 @@ func _ready():
 	output = get_node("../../IO/Output")
 	output.visible = false
 	
-	#button_pressed = false
+	button_pressed = false
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,6 +19,6 @@ func _ready():
 #	pass
 
 
-func _on_toggled(button_pressed):
-	input.visible = not button_pressed
-	output.visible = button_pressed
+func _on_toggled(button_pressing):
+	input.visible = not button_pressing
+	output.visible = button_pressing
