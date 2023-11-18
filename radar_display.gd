@@ -135,6 +135,9 @@ func update_output():
 			WYDOK_label.text += meanbeans[mean] + ", "
 		else: 
 			WYDP_label.text += meanbeans[mean] + ", "
+	WYDW_label.text = WYDW_label.text.trim_suffix(", ")
+	WYDOK_label.text = WYDOK_label.text.trim_suffix(", ")
+	WYDP_label.text = WYDP_label.text.trim_suffix(", ")
 	
 	var food_peak = pos0*radar_scaling*means[0]
 	var water_peak = pos1*radar_scaling*means[1]
