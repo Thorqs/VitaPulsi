@@ -124,10 +124,6 @@ func update_output():
 			means[4] += entry
 		means[4] = means[4]/len(data.active_hist)
 	
-	
-	WYDOK_label.text = ""
-	WYDP_label.text = ""
-	
 	var DW_Array = []
 	var DOK_Array = []
 	var DP_Array = []
@@ -143,19 +139,39 @@ func update_output():
 	WYDW_label.text = ""
 	var DW_Append = ""
 	
-	if DW_Array.size() == 1:
-		WYDW_label.text = DW_Array[0]
-	elif DW_Array.size() > 1:
+	if DW_Array.size() > 1:
 		DW_Append = "and " + DW_Array[DW_Array.size() - 1]
-	else:
-		for i in range(1, DW_Array.size() - 1):
+	if DW_Array.size() in [1,2]:
+		WYDW_label.text = DW_Array[0] + " "
+	elif DW_Array.size() > 2:
+		for i in range(0, DW_Array.size() - 1):
 			WYDW_label.text += DW_Array[i] + ", "
-		
-	WYDW_label.text += DW_Append
 	
-	# WYDW_label.text = 
-	# WYDOK_label.text = 
-	# WYDP_label.text = 
+	WYDOK_label.text = ""
+	var DOK_Append = ""
+	
+	if DOK_Array.size() > 1:
+		DOK_Append = "and " + DOK_Array[DOK_Array.size() - 1]
+	if DOK_Array.size() in [1,2]:
+		WYDOK_label.text = DOK_Array[0] + " "
+	elif DOK_Array.size() > 2:
+		for i in range(0, DOK_Array.size() - 1):
+			WYDOK_label.text += DOK_Array[i] + ", "
+			
+	WYDP_label.text = ""
+	var DP_Append = ""
+	
+	if DP_Array.size() > 1:
+		DP_Append = "and " + DP_Array[DP_Array.size() - 1]
+	if DP_Array.size() in [1,2]:
+		WYDP_label.text = DP_Array[0] + " "
+	elif DP_Array.size() > 2:
+		for i in range(0, DP_Array.size() - 1):
+			WYDP_label.text += DP_Array[i] + ", "
+	
+	WYDW_label.text += DW_Append
+	WYDOK_label.text += DOK_Append
+	WYDP_label.text += DP_Append 
 	
 	var food_peak = pos0*radar_scaling*means[0]
 	var water_peak = pos1*radar_scaling*means[1]
