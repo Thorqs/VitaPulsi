@@ -102,7 +102,7 @@ func _ready():
 #func _process(_delta):
 func update_output():
 	var means = [0, 0, 0, 0, 0]
-	var meanbeans = ["Food", "Water", "Sleep", "Stress", "Activity"]
+	var LoC = ["Food", "Water", "Sleep", "Stress", "Activity"]
 	if len(data.food_hist) > 0:
 		for entry in data.food_hist:
 			means[0] += entry
@@ -124,20 +124,38 @@ func update_output():
 			means[4] += entry
 		means[4] = means[4]/len(data.active_hist)
 	
-	WYDW_label.text = ""
+	
 	WYDOK_label.text = ""
 	WYDP_label.text = ""
 	
-	for mean in range(0, 5):
-		if means[mean] >= 7:
-			WYDW_label.text += meanbeans[mean] + ", "
-		elif means[mean] >3:
-			WYDOK_label.text += meanbeans[mean] + ", "
+	var DW_Array = []
+	var DOK_Array = []
+	var DP_Array = []
+	
+	for i in range(0, 5):
+		if means[i] >= 7:
+			DW_Array.append(LoC[i])
+		elif means[i] >3:
+			DOK_Array.append(LoC[i])
 		else: 
-			WYDP_label.text += meanbeans[mean] + ", "
-	WYDW_label.text = WYDW_label.text.trim_suffix(", ")
-	WYDOK_label.text = WYDOK_label.text.trim_suffix(", ")
-	WYDP_label.text = WYDP_label.text.trim_suffix(", ")
+			DP_Array.append(LoC[i])
+			
+	WYDW_label.text = ""
+	var DW_Append = ""
+	
+	if DW_Array.size() == 1:
+		WYDW_label.text = DW_Array[0]
+	elif DW_Array.size() > 1:
+		DW_Append = "and " + DW_Array[DW_Array.size() - 1]
+	else:
+		for i in range(1, DW_Array.size() - 1):
+			WYDW_label.text += DW_Array[i] + ", "
+		
+	WYDW_label.text += DW_Append
+	
+	# WYDW_label.text = 
+	# WYDOK_label.text = 
+	# WYDP_label.text = 
 	
 	var food_peak = pos0*radar_scaling*means[0]
 	var water_peak = pos1*radar_scaling*means[1]
