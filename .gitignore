@@ -19,3 +19,4 @@ android/
 # Mono-specific ignores
 .mono/
 data_*/
+Biotracker.apk.idsig
