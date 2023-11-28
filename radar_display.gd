@@ -97,6 +97,8 @@ func _ready():
 	sleep_label.position = radar_offset + 11*radar_scaling*pos2 - sleep_label.size/2
 	stress_label.position = radar_offset + 11*radar_scaling*pos3 - stress_label.size/2
 	activity_label.position = radar_offset + 11*radar_scaling*pos4 - Vector2(3*activity_label.size.x/4, activity_label.size.y/2)
+	
+	update_output()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(_delta):
