@@ -12,7 +12,13 @@ var Activity : int
 func _ready():
 	userData.load_data()
 
-func _on_input_button_pressed():
+func _on_input_confirm_button_pressed():
+	get_node("Input_Button/Input_Confirm").visible=true
+	
+func _on_input_cancel_button_pressed():
+	get_node("Input_Button/Input_Confirm").visible=false
+
+func _on_confirm_input_button_pressed():
 	Food = get_node("HBox_Food/Food_Val").value
 	Water = get_node("HBox_Water/Water_Val").value
 	Sleep = get_node("HBox_Sleep/Sleep_Val").value
@@ -24,11 +30,19 @@ func _on_input_button_pressed():
 	userData.update_stress(Stress)
 	userData.update_activity(Activity)
 	userData.save_data()
+	get_node("Input_Button/Input_Confirm").visible=false
 	
-func _on_clear_button_pressed():
+func _on_clear_confirm_button_pressed():
+	get_node("Clear_Button/Clear_Confirm").visible=true
+	
+func _on_clear_cancel_button_pressed():
+	get_node("Clear_Button/Clear_Confirm").visible=false
+	
+func _on_confirm_clear_button_pressed():
 	userData.clear_food_hist()
 	userData.clear_water_hist()
 	userData.clear_sleep_hist()
 	userData.clear_stress_hist()
 	userData.clear_active_hist()
 	userData.save_data()
+	get_node("Clear_Button/Clear_Confirm").visible=false
