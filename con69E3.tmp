@@ -434,8 +434,6 @@ layout_mode = 2
 text = "Delete ALL Values"
 
 [node name="Clear_Confirm" type="Popup" parent="Panel/MainVBox/IO/Input/Clear_Button"]
-title = "Clear input"
-initial_position = 1
 size = Vector2i(300, 300)
 
 [node name="Clear_Confirm_Panel" type="Panel" parent="Panel/MainVBox/IO/Input/Clear_Button/Clear_Confirm"]
@@ -793,12 +791,9 @@ custom_minimum_size = Vector2(0, 90)
 layout_mode = 2
 
 [connection signal="toggled" from="Panel/MainVBox/HBoxContainer/CheckButton" to="Panel/MainVBox/HBoxContainer/CheckButton" method="_on_toggled"]
-[connection signal="visibility_changed" from="Panel/MainVBox/IO/Input" to="Panel/MainVBox/IO/Input" method="_on_visibility_changed"]
 [connection signal="pressed" from="Panel/MainVBox/IO/Input/Input_Button" to="Panel/MainVBox/IO/Input" method="_on_input_confirm_button_pressed"]
 [connection signal="pressed" from="Panel/MainVBox/IO/Input/Input_Button/Input_Confirm/Input_Confirm_Panel/VBoxContainer/Confirm_Button_Box/Confirm Button" to="Panel/MainVBox/IO/Input" method="_on_confirm_input_button_pressed"]
-[connection signal="pressed" from="Panel/MainVBox/IO/Input/Input_Button/Input_Confirm/Input_Confirm_Panel/VBoxContainer/Confirm_Button_Box/Confirm Button" to="Panel/MainVBox/IO/Output" method="update_output"]
 [connection signal="pressed" from="Panel/MainVBox/IO/Input/Input_Button/Input_Confirm/Input_Confirm_Panel/VBoxContainer/Cancel_Button_Box/Cancel Button" to="Panel/MainVBox/IO/Input" method="_on_input_cancel_button_pressed"]
 [connection signal="pressed" from="Panel/MainVBox/IO/Input/Clear_Button" to="Panel/MainVBox/IO/Input" method="_on_clear_confirm_button_pressed"]
 [connection signal="pressed" from="Panel/MainVBox/IO/Input/Clear_Button/Clear_Confirm/Clear_Confirm_Panel/VBoxContainer/Confirm_Button_Box/Confirm Button" to="Panel/MainVBox/IO/Input" method="_on_confirm_clear_button_pressed"]
-[connection signal="pressed" from="Panel/MainVBox/IO/Input/Clear_Button/Clear_Confirm/Clear_Confirm_Panel/VBoxContainer/Confirm_Button_Box/Confirm Button" to="Panel/MainVBox/IO/Output" method="update_output"]
 [connection signal="pressed" from="Panel/MainVBox/IO/Input/Clear_Button/Clear_Confirm/Clear_Confirm_Panel/VBoxContainer/Cancel_Button_Box/Cancel Button" to="Panel/MainVBox/IO/Input" method="_on_clear_cancel_button_pressed"]
