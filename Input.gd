@@ -32,3 +32,14 @@ func _on_clear_button_pressed():
 	userData.clear_stress_hist()
 	userData.clear_active_hist()
 	userData.save_data()
+
+
+func _on_visibility_changed():
+	
+	#print()
+	if userData.day_hist.size() > 0 and userData.day_hist[userData.day_hist.size() - 1] == Time.get_date_string_from_system():
+		get_node("Input_Button").disabled = true
+		get_node("Input_Button").text = "One input per day"
+	else:
+		get_node("Input_Button").disabled = false
+		get_node("Input_Button").text = "Enter data"

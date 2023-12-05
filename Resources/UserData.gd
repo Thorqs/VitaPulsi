@@ -9,6 +9,7 @@ var save_file_name = "UserData.tres"
 @export var sleep_hist = []
 @export var stress_hist = []
 @export var active_hist = []
+@export var day_hist = []
 
 func load_data():
 	DirAccess.make_dir_absolute(save_file_path)
@@ -21,6 +22,7 @@ func load_data():
 		active_hist = temp.active_hist
 
 func save_data():
+	day_hist.append(Time.get_date_string_from_system())
 	ResourceSaver.save(self, save_file_path + save_file_name)
 
 func update_food(value : int):
