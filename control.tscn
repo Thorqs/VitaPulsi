@@ -732,7 +732,6 @@ custom_minimum_size = Vector2(0, 90)
 layout_mode = 2
 
 [node name="Main Menu" type="VBoxContainer" parent="Panel/Main VBox"]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 
@@ -828,26 +827,93 @@ vertical_icon_alignment = 2
 layout_mode = 2
 
 [node name="Settings Menu" type="VBoxContainer" parent="Panel/Main VBox"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Settings Spacer Top" type="Control" parent="Panel/Main VBox/Settings Menu"]
+custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
-size_flags_vertical = 3
 
 [node name="Settings" type="Label" parent="Panel/Main VBox/Settings Menu"]
 layout_mode = 2
 text = "- Settings -"
 horizontal_alignment = 1
 
-[node name="Settings Spacer Bottom" type="Control" parent="Panel/Main VBox/Settings Menu"]
-custom_minimum_size = Vector2(0, 20)
+[node name="Settings Spacer Mid" type="Control" parent="Panel/Main VBox/Settings Menu"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="Purpose" type="Label" parent="Panel/Main VBox/Settings Menu"]
+layout_mode = 2
+text = "Lifepulse is an attempt to monitor common health habits and "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Purpose2" type="Label" parent="Panel/Main VBox/Settings Menu"]
+layout_mode = 2
+text = "present them to the user to indicate what they are doing well,"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Purpose3" type="Label" parent="Panel/Main VBox/Settings Menu"]
+layout_mode = 2
+text = "and what they can be doing better."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Purpose Spacer" type="Control" parent="Panel/Main VBox/Settings Menu"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="Recommended Use" type="Label" parent="Panel/Main VBox/Settings Menu"]
+layout_mode = 2
+text = "Ideally the user will make a log each day. Once the habit is formed"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Recommended Use2" type="Label" parent="Panel/Main VBox/Settings Menu"]
+layout_mode = 2
+text = "this process should only take a few minutes. After a few weeks,"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Recommended Use3" type="Label" parent="Panel/Main VBox/Settings Menu"]
+layout_mode = 2
+text = "Lifepulse should have enough data to give a relatively accurate"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Recommended Use4" type="Label" parent="Panel/Main VBox/Settings Menu"]
+layout_mode = 2
+text = "view of the users current lifestyle."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Recommended Use Spacer" type="Control" parent="Panel/Main VBox/Settings Menu"]
+custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="Data Clear" type="Label" parent="Panel/Main VBox/Settings Menu"]
+layout_mode = 2
+text = "If necessary, below is the button to wipe all currently stored data."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Data Clear2" type="Label" parent="Panel/Main VBox/Settings Menu"]
+layout_mode = 2
+text = "Only press if you are certain you want to delete ALL logs."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Clear Button Spacer" type="Control" parent="Panel/Main VBox/Settings Menu"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
 [node name="Clear Button" type="Button" parent="Panel/Main VBox/Settings Menu"]
 layout_mode = 2
-text = "Delete ALL Values"
+text = "Delete ALL Logs"
 icon_alignment = 1
 vertical_icon_alignment = 2
 
@@ -916,8 +982,10 @@ alignment = 1
 layout_mode = 2
 text = "Cancel"
 
-[node name="Button Spacer 1" type="Label" parent="Panel/Main VBox/Settings Menu"]
+[node name="Dynamic Button Spacer" type="Control" parent="Panel/Main VBox/Settings Menu"]
+custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="Return to Main Button" type="Button" parent="Panel/Main VBox/Settings Menu"]
 layout_mode = 2
@@ -925,7 +993,8 @@ text = "Return to Main Menu"
 icon_alignment = 1
 vertical_icon_alignment = 2
 
-[node name="Button Spacer 2" type="Label" parent="Panel/Main VBox/Settings Menu"]
+[node name="Return to Main Spacer" type="Control" parent="Panel/Main VBox/Settings Menu"]
+custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 
 [connection signal="toggled" from="Panel/Main VBox/IO Panel Switcher - IGNORE_REPLACE/CheckButton" to="Panel/Main VBox/IO Panel Switcher - IGNORE_REPLACE/CheckButton" method="_on_toggled"]
