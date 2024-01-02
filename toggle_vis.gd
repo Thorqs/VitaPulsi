@@ -5,10 +5,10 @@ var output: Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	input = get_node("../../IO/Input")
+	input = get_node("../../IO Panels/Input")
 	input.visible = true
 	
-	output = get_node("../../IO/Output")
+	output = get_node("../../IO Panels/Output")
 	output.visible = false
 	
 	button_pressed = false
