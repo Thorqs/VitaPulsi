@@ -1011,6 +1011,7 @@ layout_mode = 2
 [connection signal="pressed" from="Panel/Main VBox/IO Panels/Input/Input_Button/Input_Confirm/Input_Confirm_Panel/VBoxContainer/Confirm_Button_Box/Confirm Button" to="Panel/Main VBox/IO Panels/Input" method="_on_confirm_input_button_pressed"]
 [connection signal="pressed" from="Panel/Main VBox/IO Panels/Input/Input_Button/Input_Confirm/Input_Confirm_Panel/VBoxContainer/Confirm_Button_Box/Confirm Button" to="Panel/Main VBox/IO Panels/Output" method="update_output"]
 [connection signal="pressed" from="Panel/Main VBox/IO Panels/Input/Input_Button/Input_Confirm/Input_Confirm_Panel/VBoxContainer/Cancel_Button_Box/Cancel Button" to="Panel/Main VBox/IO Panels/Input" method="_on_input_cancel_button_pressed"]
+[connection signal="pressed" from="Panel/Main VBox/Main Menu/MM Exit App Button" to="Panel/Main VBox/Main Menu" method="_on_mm_exit_app_button_pressed"]
 [connection signal="pressed" from="Panel/Main VBox/Settings Menu/Clear_Button" to="Panel/Main VBox/Settings Menu" method="_on_clear_button_pressed"]
 [connection signal="pressed" from="Panel/Main VBox/Settings Menu/Clear_Button/Clear_Confirm/Clear_Confirm_Panel/VBoxContainer/Confirm_Button_Box/Confirm Button" to="Panel/Main VBox/IO Panels/Output" method="update_output"]
 [connection signal="pressed" from="Panel/Main VBox/Settings Menu/Clear_Button/Clear_Confirm/Clear_Confirm_Panel/VBoxContainer/Confirm_Button_Box/Confirm Button" to="Panel/Main VBox/Settings Menu" method="_on_confirm_button_pressed"]
