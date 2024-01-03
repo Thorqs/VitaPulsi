@@ -63,7 +63,6 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_8pyq2")
 
 [node name="Main Menu" type="VBoxContainer" parent="Panel/Main VBox"]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 10
@@ -335,6 +334,7 @@ custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 
 [node name="History" type="VBoxContainer" parent="Panel/Main VBox"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 script = ExtResource("6_oipje")
@@ -1002,8 +1002,8 @@ layout_mode = 2
 [connection signal="pressed" from="Panel/Main VBox/Main Menu/MM Settings Button" to="Panel/Main VBox/Main Menu" method="_on_mm_settings_button_pressed"]
 [connection signal="pressed" from="Panel/Main VBox/Main Menu/MM Exit App Button" to="Panel/Main VBox/Main Menu" method="_on_mm_exit_app_button_pressed"]
 [connection signal="pressed" from="Panel/Main VBox/Settings Menu/Clear_Button" to="Panel/Main VBox/Settings Menu" method="_on_clear_button_pressed"]
-[connection signal="pressed" from="Panel/Main VBox/Settings Menu/Clear_Button/Clear_Confirm/Clear_Confirm_Panel/VBoxContainer/Confirm_Button_Box/Confirm Button" to="Panel/Main VBox/Output" method="update_output"]
 [connection signal="pressed" from="Panel/Main VBox/Settings Menu/Clear_Button/Clear_Confirm/Clear_Confirm_Panel/VBoxContainer/Confirm_Button_Box/Confirm Button" to="Panel/Main VBox/Settings Menu" method="_on_confirm_button_pressed"]
+[connection signal="pressed" from="Panel/Main VBox/Settings Menu/Clear_Button/Clear_Confirm/Clear_Confirm_Panel/VBoxContainer/Confirm_Button_Box/Confirm Button" to="Panel/Main VBox/Output" method="update_output"]
 [connection signal="pressed" from="Panel/Main VBox/Settings Menu/Clear_Button/Clear_Confirm/Clear_Confirm_Panel/VBoxContainer/Cancel_Button_Box/Cancel Button" to="Panel/Main VBox/Settings Menu" method="_on_clear_cancel_button_pressed"]
 [connection signal="pressed" from="Panel/Main VBox/Settings Menu/Return to Main Button" to="Panel/Main VBox/Settings Menu" method="_on_return_to_main_button_pressed"]
 [connection signal="pressed" from="Panel/Main VBox/History/Main_Menu_Button" to="Panel/Main VBox/History" method="_on_main_menu_button_pressed"]

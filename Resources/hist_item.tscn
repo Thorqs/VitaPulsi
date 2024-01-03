@@ -1,8 +1,11 @@
-[gd_scene format=3 uid="uid://dst6m0cpxjq64"]
+[gd_scene load_steps=2 format=3 uid="uid://dst6m0cpxjq64"]
+
+[ext_resource type="Script" path="res://Resources/hist_item.gd" id="1_aralm"]
 
 [node name="Hist_Item" type="Panel"]
-custom_minimum_size = Vector2(0, 120)
+custom_minimum_size = Vector2(160, 120)
 size_flags_horizontal = 3
+script = ExtResource("1_aralm")
 
 [node name="Hist_VBox" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -15,7 +18,10 @@ grow_vertical = 2
 [node name="Date_Label" type="Label" parent="Hist_VBox"]
 layout_mode = 2
 size_flags_vertical = 6
-text = "This is the date"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+text = "DD-MM-YYYY"
 horizontal_alignment = 1
 
 [node name="GridContainer" type="GridContainer" parent="Hist_VBox"]
@@ -26,21 +32,37 @@ columns = 2
 [node name="Food" type="Label" parent="Hist_VBox/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
 text = "Food: 5"
 
 [node name="Water" type="Label" parent="Hist_VBox/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
 text = "Water: 5"
 
 [node name="Sleep" type="Label" parent="Hist_VBox/GridContainer"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
 text = "Sleep: 5"
 
 [node name="Stress" type="Label" parent="Hist_VBox/GridContainer"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
 text = "Stress: 5"
 
 [node name="Activity" type="Label" parent="Hist_VBox/GridContainer"]
 layout_mode = 2
-text = "Activity: 5"
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+text = "Activity: 10"
+
+[node name="Edit Button" type="Button" parent="Hist_VBox/GridContainer"]
+layout_mode = 2
+text = "Edit"
