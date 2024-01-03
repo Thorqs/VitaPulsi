@@ -16,6 +16,15 @@ func _ready():
 #func _process(delta):
 #	pass
 
-
 func _on_mm_exit_app_button_pressed():
 	get_tree().quit()
+
+
+func _on_mm_settings_button_pressed():
+	settings_menu.visible = true
+	self.visible = false
+
+
+func _on_mm_history_button_pressed():
+	history_menu.visible = true
+	self.visible = false

@@ -1,10 +1,14 @@
 extends VBoxContainer
 
 var userData: UserData
+var mainMenu
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	# IMPORTANT: references input userData varable to avoid data race
 	userData = get_node("../IO Panels/Input").userData
+	
+	mainMenu = get_node("../Main Menu")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(_delta):
@@ -25,3 +29,8 @@ func _on_confirm_button_pressed():
 	userData.clear_active_hist()
 	userData.save_data()
 	get_node("Clear_Button/Clear_Confirm").visible=false
+
+
+func _on_return_to_main_button_pressed():
+	mainMenu.visible = true
+	self.visible = false
