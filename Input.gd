@@ -33,13 +33,4 @@ func _on_confirm_input_button_pressed():
 	get_node("Input_Button/Input_Confirm").visible=false
 	
 
-func _on_visibility_changed():
-	
-	#print()
-	if userData.day_hist.size() > 0 and userData.day_hist[userData.day_hist.size() - 1] == Time.get_date_string_from_system():
-		get_node("Input_Button").disabled = true
-		get_node("Input_Button").text = "One input per day"
-	else:
-		get_node("Input_Button").disabled = false
-		get_node("Input_Button").text = "Enter data"
 

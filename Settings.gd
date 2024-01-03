@@ -6,7 +6,7 @@ var mainMenu
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# IMPORTANT: references input userData varable to avoid data race
-	userData = get_node("../IO Panels/Input").userData
+	userData = get_node("../Input").userData
 	
 	mainMenu = get_node("../Main Menu")
 
