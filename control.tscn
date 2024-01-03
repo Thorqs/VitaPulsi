@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cf6llchqikm33"]
+[gd_scene load_steps=10 format=3 uid="uid://cf6llchqikm33"]
 
 [ext_resource type="Script" path="res://Input.gd" id="1_n1rqy"]
 [ext_resource type="Script" path="res://toggle_vis.gd" id="1_vqpus"]
 [ext_resource type="Script" path="res://radar_display.gd" id="2_m2p0q"]
+[ext_resource type="Script" path="res://Main Menu.gd" id="4_b2el5"]
+[ext_resource type="Script" path="res://Settings.gd" id="4_jqwa7"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_lmhg1"]
 
@@ -83,6 +85,7 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Input" type="VBoxContainer" parent="Panel/Main VBox/IO Panels"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -734,6 +737,7 @@ layout_mode = 2
 [node name="Main Menu" type="VBoxContainer" parent="Panel/Main VBox"]
 layout_mode = 2
 size_flags_vertical = 3
+script = ExtResource("4_b2el5")
 
 [node name="Welcome Spacer Top" type="Control" parent="Panel/Main VBox/Main Menu"]
 layout_mode = 2
@@ -830,6 +834,7 @@ layout_mode = 2
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
+script = ExtResource("4_jqwa7")
 
 [node name="Settings Spacer Top" type="Control" parent="Panel/Main VBox/Settings Menu"]
 custom_minimum_size = Vector2(0, 25)
@@ -911,18 +916,18 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 
-[node name="Clear Button" type="Button" parent="Panel/Main VBox/Settings Menu"]
+[node name="Clear_Button" type="Button" parent="Panel/Main VBox/Settings Menu"]
 layout_mode = 2
 text = "Delete ALL Logs"
 icon_alignment = 1
 vertical_icon_alignment = 2
 
-[node name="Clear_Confirm" type="Popup" parent="Panel/Main VBox/Settings Menu/Clear Button"]
+[node name="Clear_Confirm" type="Popup" parent="Panel/Main VBox/Settings Menu/Clear_Button"]
 title = "Clear input"
 initial_position = 1
 size = Vector2i(300, 300)
 
-[node name="Clear_Confirm_Panel" type="Panel" parent="Panel/Main VBox/Settings Menu/Clear Button/Clear_Confirm"]
+[node name="Clear_Confirm_Panel" type="Panel" parent="Panel/Main VBox/Settings Menu/Clear_Button/Clear_Confirm"]
 custom_minimum_size = Vector2(300, 300)
 anchors_preset = 8
 anchor_left = 0.5
@@ -936,7 +941,7 @@ offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/Main VBox/Settings Menu/Clear Button/Clear_Confirm/Clear_Confirm_Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/Main VBox/Settings Menu/Clear_Button/Clear_Confirm/Clear_Confirm_Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -950,10 +955,10 @@ offset_bottom = 108.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Confirm_Text" type="HBoxContainer" parent="Panel/Main VBox/Settings Menu/Clear Button/Clear_Confirm/Clear_Confirm_Panel/VBoxContainer"]
+[node name="Confirm_Text" type="HBoxContainer" parent="Panel/Main VBox/Settings Menu/Clear_Button/Clear_Confirm/Clear_Confirm_Panel/VBoxContainer"]
 layout_mode = 2
 
-[node name="Confirm_Label" type="Label" parent="Panel/Main VBox/Settings Menu/Clear Button/Clear_Confirm/Clear_Confirm_Panel/VBoxContainer/Confirm_Text"]
+[node name="Confirm_Label" type="Label" parent="Panel/Main VBox/Settings Menu/Clear_Button/Clear_Confirm/Clear_Confirm_Panel/VBoxContainer/Confirm_Text"]
 layout_mode = 2
 text = "
 You are about to delete ALL data.
@@ -966,19 +971,19 @@ want to continue?
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Confirm_Button_Box" type="HBoxContainer" parent="Panel/Main VBox/Settings Menu/Clear Button/Clear_Confirm/Clear_Confirm_Panel/VBoxContainer"]
+[node name="Confirm_Button_Box" type="HBoxContainer" parent="Panel/Main VBox/Settings Menu/Clear_Button/Clear_Confirm/Clear_Confirm_Panel/VBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="Confirm Button" type="Button" parent="Panel/Main VBox/Settings Menu/Clear Button/Clear_Confirm/Clear_Confirm_Panel/VBoxContainer/Confirm_Button_Box"]
+[node name="Confirm Button" type="Button" parent="Panel/Main VBox/Settings Menu/Clear_Button/Clear_Confirm/Clear_Confirm_Panel/VBoxContainer/Confirm_Button_Box"]
 layout_mode = 2
 text = "Confirm"
 
-[node name="Cancel_Button_Box" type="HBoxContainer" parent="Panel/Main VBox/Settings Menu/Clear Button/Clear_Confirm/Clear_Confirm_Panel/VBoxContainer"]
+[node name="Cancel_Button_Box" type="HBoxContainer" parent="Panel/Main VBox/Settings Menu/Clear_Button/Clear_Confirm/Clear_Confirm_Panel/VBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="Cancel Button" type="Button" parent="Panel/Main VBox/Settings Menu/Clear Button/Clear_Confirm/Clear_Confirm_Panel/VBoxContainer/Cancel_Button_Box"]
+[node name="Cancel Button" type="Button" parent="Panel/Main VBox/Settings Menu/Clear_Button/Clear_Confirm/Clear_Confirm_Panel/VBoxContainer/Cancel_Button_Box"]
 layout_mode = 2
 text = "Cancel"
 
@@ -997,13 +1002,16 @@ vertical_icon_alignment = 2
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 
+[node name="History" type="VBoxContainer" parent="Panel/Main VBox"]
+layout_mode = 2
+
 [connection signal="toggled" from="Panel/Main VBox/IO Panel Switcher - IGNORE_REPLACE/CheckButton" to="Panel/Main VBox/IO Panel Switcher - IGNORE_REPLACE/CheckButton" method="_on_toggled"]
 [connection signal="visibility_changed" from="Panel/Main VBox/IO Panels/Input" to="Panel/Main VBox/IO Panels/Input" method="_on_visibility_changed"]
 [connection signal="pressed" from="Panel/Main VBox/IO Panels/Input/Input_Button" to="Panel/Main VBox/IO Panels/Input" method="_on_input_confirm_button_pressed"]
 [connection signal="pressed" from="Panel/Main VBox/IO Panels/Input/Input_Button/Input_Confirm/Input_Confirm_Panel/VBoxContainer/Confirm_Button_Box/Confirm Button" to="Panel/Main VBox/IO Panels/Input" method="_on_confirm_input_button_pressed"]
 [connection signal="pressed" from="Panel/Main VBox/IO Panels/Input/Input_Button/Input_Confirm/Input_Confirm_Panel/VBoxContainer/Confirm_Button_Box/Confirm Button" to="Panel/Main VBox/IO Panels/Output" method="update_output"]
 [connection signal="pressed" from="Panel/Main VBox/IO Panels/Input/Input_Button/Input_Confirm/Input_Confirm_Panel/VBoxContainer/Cancel_Button_Box/Cancel Button" to="Panel/Main VBox/IO Panels/Input" method="_on_input_cancel_button_pressed"]
-[connection signal="pressed" from="Panel/Main VBox/Settings Menu/Clear Button" to="Panel/Main VBox/IO Panels/Input" method="_on_clear_confirm_button_pressed"]
-[connection signal="pressed" from="Panel/Main VBox/Settings Menu/Clear Button/Clear_Confirm/Clear_Confirm_Panel/VBoxContainer/Confirm_Button_Box/Confirm Button" to="Panel/Main VBox/IO Panels/Input" method="_on_confirm_clear_button_pressed"]
-[connection signal="pressed" from="Panel/Main VBox/Settings Menu/Clear Button/Clear_Confirm/Clear_Confirm_Panel/VBoxContainer/Confirm_Button_Box/Confirm Button" to="Panel/Main VBox/IO Panels/Output" method="update_output"]
-[connection signal="pressed" from="Panel/Main VBox/Settings Menu/Clear Button/Clear_Confirm/Clear_Confirm_Panel/VBoxContainer/Cancel_Button_Box/Cancel Button" to="Panel/Main VBox/IO Panels/Input" method="_on_clear_cancel_button_pressed"]
+[connection signal="pressed" from="Panel/Main VBox/Settings Menu/Clear_Button" to="Panel/Main VBox/Settings Menu" method="_on_clear_button_pressed"]
+[connection signal="pressed" from="Panel/Main VBox/Settings Menu/Clear_Button/Clear_Confirm/Clear_Confirm_Panel/VBoxContainer/Confirm_Button_Box/Confirm Button" to="Panel/Main VBox/IO Panels/Output" method="update_output"]
+[connection signal="pressed" from="Panel/Main VBox/Settings Menu/Clear_Button/Clear_Confirm/Clear_Confirm_Panel/VBoxContainer/Confirm_Button_Box/Confirm Button" to="Panel/Main VBox/Settings Menu" method="_on_confirm_button_pressed"]
+[connection signal="pressed" from="Panel/Main VBox/Settings Menu/Clear_Button/Clear_Confirm/Clear_Confirm_Panel/VBoxContainer/Cancel_Button_Box/Cancel Button" to="Panel/Main VBox/Settings Menu" method="_on_clear_cancel_button_pressed"]
