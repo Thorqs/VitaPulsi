@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dst6m0cpxjq64"]
+
+[node name="Hist_Item" type="Panel"]
+custom_minimum_size = Vector2(0, 120)
+size_flags_horizontal = 3
+
+[node name="Hist_VBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Date_Label" type="Label" parent="Hist_VBox"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "This is the date"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Hist_VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 2
+
+[node name="Food" type="Label" parent="Hist_VBox/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Food: 5"
+
+[node name="Water" type="Label" parent="Hist_VBox/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Water: 5"
+
+[node name="Sleep" type="Label" parent="Hist_VBox/GridContainer"]
+layout_mode = 2
+text = "Sleep: 5"
+
+[node name="Stress" type="Label" parent="Hist_VBox/GridContainer"]
+layout_mode = 2
+text = "Stress: 5"
+
+[node name="Activity" type="Label" parent="Hist_VBox/GridContainer"]
+layout_mode = 2
+text = "Activity: 5"
