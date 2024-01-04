@@ -63,6 +63,7 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_8pyq2")
 
 [node name="Main Menu" type="VBoxContainer" parent="Panel/Main VBox"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 10
@@ -334,10 +335,10 @@ custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 
 [node name="History" type="VBoxContainer" parent="Panel/Main VBox"]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 script = ExtResource("6_oipje")
+base_history = ExtResource("4_w4vhy")
 
 [node name="History Scroll" type="ScrollContainer" parent="Panel/Main VBox/History"]
 layout_mode = 2
