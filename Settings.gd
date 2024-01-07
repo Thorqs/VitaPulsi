@@ -5,9 +5,8 @@ var mainMenu
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	# IMPORTANT: references input userData varable to avoid data race
-	userData = get_node("../Input").userData
-	
+	# IMPORTANT: references History userData varable to avoid data race
+	userData = get_node("../History").userData
 	mainMenu = get_node("../Main Menu")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

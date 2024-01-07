@@ -31,7 +31,7 @@ var data = UserData
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	data = get_node("../Input").userData
+	data = get_node("../History").userData
 	# Make an array of offset rings
 	rings.append(get_node("1b"))
 	rings.append(get_node("2w"))
