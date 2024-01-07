@@ -27,9 +27,15 @@ func calc_means(days = 90):
 	var means = [0, 0, 0, 0, 0]
 	
 	if len(history_data) > 0:
-		for i in range(0,5):
-			for entry in history_data:
-				means[i] += entry[i]
-			means[i] = means[i]/len(history_data)
+		if len(history_data) >= days:
+			for index in range(0,5):
+				for day in range(0, days):
+						means[index] += history_data[days][index]
+				means[index] = means[index]/days
+		else:
+			for index in range(0,5):
+				for entry in history_data:
+					means[index] += entry[index]
+				means[index] = means[index]/len(history_data)
 	return means
 
