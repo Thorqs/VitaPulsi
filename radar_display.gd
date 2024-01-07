@@ -27,7 +27,7 @@ const pos2 = Vector2(sin(0.8*PI), -cos(0.8*PI))
 const pos3 = Vector2(sin(1.2*PI), -cos(1.2*PI))
 const pos4 = Vector2(sin(1.6*PI), -cos(1.6*PI))
 
-var data = UserData
+var data: UserData
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -103,29 +103,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(_delta):
 func update_output():
-	var means = [0, 0, 0, 0, 0]
+	var means = data.calc_means()
 	var LoC = ["Food", "Water", "Sleep", "Stress", "Activity"]
-	if len(data.food_hist) > 0:
-		for entry in data.food_hist:
-			means[0] += entry
-		means[0] = means[0]/len(data.food_hist)
-		
-		for entry in data.water_hist:
-			means[1] += entry
-		means[1] = means[1]/len(data.water_hist)
-		
-		for entry in data.sleep_hist:
-			means[2] += entry
-		means[2] = means[2]/len(data.sleep_hist)
-		
-		for entry in data.stress_hist:
-			means[3] += entry
-		means[3] = means[3]/len(data.stress_hist)
-		
-		for entry in data.active_hist:
-			means[4] += entry
-		means[4] = means[4]/len(data.active_hist)
-	
 	var DW_Array = []
 	var DOK_Array = []
 	var DP_Array = []

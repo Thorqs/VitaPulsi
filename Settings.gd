@@ -7,7 +7,7 @@ var mainMenu
 func _ready():
 	# IMPORTANT: references History userData varable to avoid data race
 	userData = get_node("../History").userData
-	mainMenu = get_node("../Main Menu")
+	mainMenu = get_node("../Main")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(_delta):
@@ -21,12 +21,8 @@ func _on_clear_cancel_button_pressed():
 	get_node("Clear_Button/Clear_Confirm").visible=false
 	
 func _on_confirm_button_pressed():
-	userData.clear_food_hist()
-	userData.clear_water_hist()
-	userData.clear_sleep_hist()
-	userData.clear_stress_hist()
-	userData.clear_active_hist()
-	userData.save_data()
+	userData.clear_history()
+	#userData.save_data() # not sure why this is here
 	get_node("Clear_Button/Clear_Confirm").visible=false
 
 

@@ -8,7 +8,7 @@ var userData = UserData.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	mainMenu = get_node("../Main Menu")
+	mainMenu = get_node("../Main")
 	hist_grid = get_node("History Scroll/History Contents")
 	userData.load_data()
 	

@@ -25,11 +25,6 @@ func _on_confirm_input_button_pressed():
 	Stress = get_node("HBox_Stress/Stress_Val").value
 	Activity = get_node("HBox_Activity/Activity_Val").value
 	
-	userData.update_food(Food)
-	userData.update_water(Water)
-	userData.update_sleep(Sleep)
-	userData.update_stress(Stress)
-	userData.update_activity(Activity)
-	userData.save_data()
+	userData.save_data([Food, Water, Sleep, Stress, Activity])
 	
 	get_node("Input_Button/Input_Confirm").visible=false

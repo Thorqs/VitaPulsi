@@ -8,7 +8,7 @@ var logs
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	settings_menu = get_node("../Settings Menu")
+	settings_menu = get_node("../Settings")
 	input_menu = get_node("../Input")
 	output_menu = get_node("../Output")
 	history_menu = get_node("../History")
