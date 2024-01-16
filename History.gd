@@ -20,7 +20,6 @@ func _ready():
 #func _process(delta):
 #	pass
 
-
-func _on_main_menu_button_pressed():
+func _on_history_return_to_main_pressed():
 	mainMenu.visible = true
 	self.visible = false
