@@ -17,7 +17,7 @@ var WYDW_label: Label
 var WYDOK_label: Label
 var WYDP_label: Label
 
-const radar_offset = Vector2(270, 250)
+const radar_offset = Vector2(245, 250)
 const radar_scaling = 20
 
 # corners of identity pentagons
@@ -50,9 +50,9 @@ func _ready():
 	ring_labels.append(get_node("8"))
 	ring_labels.append(get_node("10"))
 	
-	WYDW_label = get_node("VBoxContainer/Answer_WYDW/WYDW_A_Label")
-	WYDOK_label = get_node("VBoxContainer/Answer_WYDOK/WYDOK_A_Label")
-	WYDP_label = get_node("VBoxContainer/Answer_WYDP/WYDP_A_Label")
+	WYDW_label = get_node("VBoxContainer/WYDW_A_Label")
+	WYDOK_label = get_node("VBoxContainer/WYDOK_A_Label")
+	WYDP_label = get_node("VBoxContainer/WYDP_A_Label")
 	
 	# make sure they are in the corect position
 	for i in range (1, 11):
@@ -181,4 +181,6 @@ func update_output():
 	activity_quad.polygon[3] = (activity_peak + stress_peak)/4
 	
 	
-		
+func _on_output_return_to_main_pressed():
+	self.visible = false
+	$"../Main".visible = true

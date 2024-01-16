@@ -25,7 +25,6 @@ func _on_confirm_button_pressed():
 	#userData.save_data() # not sure why this is here
 	get_node("Clear_Button/Clear_Confirm").visible=false
 
-
 func _on_return_to_main_button_pressed():
 	mainMenu.visible = true
 	self.visible = false
