@@ -13,7 +13,8 @@ func load_data():
 		history_data = temp.history_data
 
 func save_data(values: Array[int], day = Time.get_date_string_from_system()):
-	history_data[day] =  values
+	history_data[day] = values
+	print("saving ", values, day)
 	ResourceSaver.save(self, save_file_path + save_file_name)
 
 func clear_history():

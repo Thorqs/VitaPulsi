@@ -271,9 +271,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 columns = 3
 
-[node name="Hist_Item" parent="Panel/HBox/VBox/History/History Scroll/History Contents" instance=ExtResource("4_w4vhy")]
-layout_mode = 2
-
 [node name="History Bottom Spacer" type="Control" parent="Panel/HBox/VBox/History"]
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
@@ -781,6 +778,7 @@ layout_mode = 2
 [connection signal="pressed" from="Panel/HBox/VBox/Settings/Settings Return to Main" to="Panel/HBox/VBox/Settings" method="_on_return_to_main_button_pressed"]
 [connection signal="pressed" from="Panel/HBox/VBox/History/History Return to Main" to="Panel/HBox/VBox/History" method="_on_history_return_to_main_pressed"]
 [connection signal="pressed" from="Panel/HBox/VBox/Input/Input Button" to="Panel/HBox/VBox/Input" method="_on_input_confirm_button_pressed"]
+[connection signal="pressed" from="Panel/HBox/VBox/Input/Input Button/Input_Confirm/Input_Confirm_Panel/VBoxContainer/Confirm_Button_Box/Confirm Button" to="Panel/HBox/VBox/History" method="update_contents"]
 [connection signal="pressed" from="Panel/HBox/VBox/Input/Input Button/Input_Confirm/Input_Confirm_Panel/VBoxContainer/Confirm_Button_Box/Confirm Button" to="Panel/HBox/VBox/Input" method="_on_confirm_input_button_pressed"]
 [connection signal="pressed" from="Panel/HBox/VBox/Input/Input Button/Input_Confirm/Input_Confirm_Panel/VBoxContainer/Confirm_Button_Box/Confirm Button" to="Panel/HBox/VBox/Output" method="update_output"]
 [connection signal="pressed" from="Panel/HBox/VBox/Input/Input Button/Input_Confirm/Input_Confirm_Panel/VBoxContainer/Cancel_Button_Box/Cancel Button" to="Panel/HBox/VBox/Input" method="_on_input_cancel_button_pressed"]

@@ -32,7 +32,6 @@ columns = 2
 [node name="Food" type="Label" parent="Hist_VBox/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 text = "Food: 5"
@@ -40,7 +39,6 @@ text = "Food: 5"
 [node name="Water" type="Label" parent="Hist_VBox/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 text = "Water: 5"
@@ -62,7 +60,3 @@ layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 text = "Activity: 10"
-
-[node name="Edit Button" type="Button" parent="Hist_VBox/GridContainer"]
-layout_mode = 2
-text = "Edit"
