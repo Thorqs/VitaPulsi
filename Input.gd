@@ -14,7 +14,7 @@ func _ready():
 
 func _on_return_to_main_button():
 	self.visible = false
-	$"../Main".visible = true
+	%Main.visible = true
 
 func _on_input_confirm_button_pressed():
 	get_node("Input Button/Input_Confirm").visible=true
@@ -32,3 +32,6 @@ func _on_confirm_input_button_pressed():
 	userData.save_data([Food, Water, Sleep, Stress, Activity])
 	
 	get_node("Input Button/Input_Confirm").visible=false
+	
+	%Output.update_output()
+	%History.update_contents()

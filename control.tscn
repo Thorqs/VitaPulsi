@@ -70,6 +70,7 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_8pyq2")
 
 [node name="Main" type="VBoxContainer" parent="Panel/HBox/VBox"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 10
@@ -125,6 +126,7 @@ icon_alignment = 1
 vertical_icon_alignment = 2
 
 [node name="Settings" type="VBoxContainer" parent="Panel/HBox/VBox"]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
@@ -251,6 +253,7 @@ icon_alignment = 1
 vertical_icon_alignment = 2
 
 [node name="History" type="VBoxContainer" parent="Panel/HBox/VBox"]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
@@ -282,6 +285,7 @@ icon_alignment = 1
 vertical_icon_alignment = 2
 
 [node name="Input" type="VBoxContainer" parent="Panel/HBox/VBox"]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
@@ -523,6 +527,7 @@ icon_alignment = 1
 vertical_icon_alignment = 2
 
 [node name="Output" type="Control" parent="Panel/HBox/VBox"]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
@@ -778,9 +783,7 @@ layout_mode = 2
 [connection signal="pressed" from="Panel/HBox/VBox/Settings/Settings Return to Main" to="Panel/HBox/VBox/Settings" method="_on_return_to_main_button_pressed"]
 [connection signal="pressed" from="Panel/HBox/VBox/History/History Return to Main" to="Panel/HBox/VBox/History" method="_on_history_return_to_main_pressed"]
 [connection signal="pressed" from="Panel/HBox/VBox/Input/Input Button" to="Panel/HBox/VBox/Input" method="_on_input_confirm_button_pressed"]
-[connection signal="pressed" from="Panel/HBox/VBox/Input/Input Button/Input_Confirm/Input_Confirm_Panel/VBoxContainer/Confirm_Button_Box/Confirm Button" to="Panel/HBox/VBox/History" method="update_contents"]
 [connection signal="pressed" from="Panel/HBox/VBox/Input/Input Button/Input_Confirm/Input_Confirm_Panel/VBoxContainer/Confirm_Button_Box/Confirm Button" to="Panel/HBox/VBox/Input" method="_on_confirm_input_button_pressed"]
-[connection signal="pressed" from="Panel/HBox/VBox/Input/Input Button/Input_Confirm/Input_Confirm_Panel/VBoxContainer/Confirm_Button_Box/Confirm Button" to="Panel/HBox/VBox/Output" method="update_output"]
 [connection signal="pressed" from="Panel/HBox/VBox/Input/Input Button/Input_Confirm/Input_Confirm_Panel/VBoxContainer/Cancel_Button_Box/Cancel Button" to="Panel/HBox/VBox/Input" method="_on_input_cancel_button_pressed"]
 [connection signal="pressed" from="Panel/HBox/VBox/Input/Input Main Menu Button" to="Panel/HBox/VBox/Input" method="_on_return_to_main_button"]
 [connection signal="pressed" from="Panel/HBox/VBox/Output/VBoxContainer/Output Return to Main" to="Panel/HBox/VBox/Output" method="_on_output_return_to_main_pressed"]
