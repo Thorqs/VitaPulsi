@@ -22,7 +22,7 @@ func _ready():
 #	pass
 func set_date(new_date: String):
 	print(date_label, new_date)
-	#date_label.set_text(new_date)
+	date_label.set_text(new_date)
 
 func set_val(val_name: Label, new_value: int):
 	val_name.text = val_name.text.get_slice(":", 0) + ":" + str(new_value)

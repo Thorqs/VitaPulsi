@@ -2,20 +2,38 @@ extends Resource
 class_name UserData
 
 var save_file_path = "user://save/"
-var save_file_name = "UserData.tres"
+var save_file_name = "UserData.csv"
 
 var history_data: Dictionary
 
 func load_data():
 	DirAccess.make_dir_absolute(save_file_path)
-	if ResourceLoader.exists(save_file_path + save_file_name):
-		var temp = ResourceLoader.load(save_file_path + save_file_name)
-		history_data = temp.history_data
+	#if ResourceLoader.exists(save_file_path + save_file_name):
+	#	var temp = ResourceLoader.load(save_file_path + save_file_name)
+	if FileAccess.file_exists(save_file_path + save_file_name):
+		var load_file = FileAccess.open(save_file_path + save_file_name, FileAccess.READ)
+		var line = ""
+		var contents = []
+		var day_data: Array[int]
+		while load_file.get_position() < load_file.get_length():
+			line = load_file.get_line()
+			contents = line.split(", ")
+			#for item in contents:
+			#	item = item.strip()
+			print("contents: ", contents)
+			# find a better way to do line below
+			day_data = [int(contents[1]), int(contents[2]), int(contents[3]), int(contents[4]), int(contents[5])]
+			history_data[contents[0]] = day_data
+			
+		print("Loaded ", history_data)
 
 func save_data(values: Array[int], day = Time.get_date_string_from_system()):
 	history_data[day] = values
 	print("saving ", values, day)
-	ResourceSaver.save(self, save_file_path + save_file_name)
+	#ResourceSaver.save(self, save_file_path + save_file_name)
+	var save_file = FileAccess.open(save_file_path + save_file_name, FileAccess.WRITE)
+	for date in history_data:
+		save_file.store_line(date + ", " + str(history_data[date]).lstrip("[").rstrip("]"))
 
 func clear_history():
 	history_data.clear()
