@@ -14,7 +14,11 @@ func _ready():
 	self.update_contents()
 
 func update_contents():
-	print(userData.history_data)
+	print(userData.history_data) # check what we're working with
+	# Clear children
+	for child in get_node("History Scroll/History Contents").get_children():
+		child.queue_free()
+	# Add new children
 	if userData.history_data.size() > 0:
 		for date in userData.history_data:
 			var hist_item = base_history.instantiate()
