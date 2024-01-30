@@ -20,3 +20,8 @@ android/
 .mono/
 data_*/
 Biotracker.apk.idsig
+
+# Pictures
+*.png
+*.jpg
+*.png.*
