@@ -1,2 +1,2 @@
 # Biotracker
- Godot implementation of DAT-Biotracker
+ Godot implementation of LifePulse (working title).
