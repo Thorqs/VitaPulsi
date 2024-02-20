@@ -505,7 +505,7 @@ text = "Confirm"
 layout_mode = 2
 alignment = 1
 
-[node name="Cancel Button" type="Button" parent="Panel/HBox/VBox/Input/Input Button/Input_Confirm/Input_Confirm_Panel/VBoxContainer/Cancel_Button_Box"]
+[node name="Cancel Button" type="Button" parent="Panel/HBox/VBox/Input/Input Button/Input_Confirm/Input_Confirm_Panel/VBoxContainer"]
 layout_mode = 2
 text = "Cancel"
 
@@ -767,12 +767,11 @@ layout_mode = 2
 [connection signal="pressed" from="Panel/HBox/VBox/Main/MM Exit App Button" to="Panel/HBox/VBox/Main" method="_on_mm_exit_app_button_pressed"]
 [connection signal="pressed" from="Panel/HBox/VBox/Settings/Clear_Button" to="Panel/HBox/VBox/Settings" method="_on_clear_button_pressed"]
 [connection signal="pressed" from="Panel/HBox/VBox/Settings/Clear_Button/Clear_Confirm/Clear_Confirm_Panel/VBoxContainer/Confirm Button" to="Panel/HBox/VBox/Settings" method="_on_confirm_button_pressed"]
-[connection signal="pressed" from="Panel/HBox/VBox/Settings/Clear_Button/Clear_Confirm/Clear_Confirm_Panel/VBoxContainer/Confirm Button" to="Panel/HBox/VBox/Output" method="update_output"]
 [connection signal="pressed" from="Panel/HBox/VBox/Settings/Clear_Button/Clear_Confirm/Clear_Confirm_Panel/VBoxContainer/Cancel Button" to="Panel/HBox/VBox/Settings" method="_on_clear_cancel_button_pressed"]
 [connection signal="pressed" from="Panel/HBox/VBox/Settings/Settings Return to Main" to="Panel/HBox/VBox/Settings" method="_on_return_to_main_button_pressed"]
 [connection signal="pressed" from="Panel/HBox/VBox/History/History Return to Main" to="Panel/HBox/VBox/History" method="_on_history_return_to_main_pressed"]
 [connection signal="pressed" from="Panel/HBox/VBox/Input/Input Button" to="Panel/HBox/VBox/Input" method="_on_input_confirm_button_pressed"]
-[connection signal="pressed" from="Panel/HBox/VBox/Input/Input Button/Input_Confirm/Input_Confirm_Panel/VBoxContainer/Confirm_Button_Box/Confirm Button" to="Panel/HBox/VBox/Input" method="_on_confirm_input_button_pressed"]
-[connection signal="pressed" from="Panel/HBox/VBox/Input/Input Button/Input_Confirm/Input_Confirm_Panel/VBoxContainer/Cancel_Button_Box/Cancel Button" to="Panel/HBox/VBox/Input" method="_on_input_cancel_button_pressed"]
+[connection signal="pressed" from="Panel/HBox/VBox/Input/Input Button/Input_Confirm/Input_Confirm_Panel/VBoxContainer/Confirm Button" to="Panel/HBox/VBox/Input" method="_on_confirm_input_button_pressed"]
+[connection signal="pressed" from="Panel/HBox/VBox/Input/Input Button/Input_Confirm/Input_Confirm_Panel/VBoxContainer/Cancel Button" to="Panel/HBox/VBox/Input" method="_on_input_cancel_button_pressed"]
 [connection signal="pressed" from="Panel/HBox/VBox/Input/Input Main Menu Button" to="Panel/HBox/VBox/Input" method="_on_return_to_main_button"]
 [connection signal="pressed" from="Panel/HBox/VBox/Output/VBoxContainer/Output Return to Main" to="Panel/HBox/VBox/Output" method="_on_output_return_to_main_pressed"]
