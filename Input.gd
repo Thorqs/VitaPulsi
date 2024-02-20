@@ -35,3 +35,10 @@ func _on_confirm_input_button_pressed():
 	
 	%Output.update_output()
 	%History.update_contents()
+
+func _on_visibility_changed():
+	get_node("HBox_Food/Food_Val").value = 5
+	get_node("HBox_Water/Water_Val").value = 5
+	get_node("HBox_Sleep/Sleep_Val").value = 5
+	get_node("HBox_Stress/Stress_Val").value = 5 
+	get_node("HBox_Activity/Activity_Val").value = 5
