@@ -1,7 +1,7 @@
 
 extends VBoxContainer
 
-var userData: UserData
+var userData
 
 var Food : int
 var Water : int
@@ -10,17 +10,17 @@ var Stress : int
 var Activity : int
 
 func _ready():
-	userData = get_node("../History").userData
+	userData = get_node("%History").userData
 
 func _on_return_to_main_button():
 	self.visible = false
-	%Main.visible = true
+	get_node("%Main").visible = true
 
 func _on_input_confirm_button_pressed():
-	get_node("Input Button/Input_Confirm").visible=true
+	get_node("Input_Button/Input_Confirm").visible=true
 	
 func _on_input_cancel_button_pressed():
-	get_node("Input Button/Input_Confirm").visible=false
+	get_node("Input_Button/Input_Confirm").visible=false
 
 func _on_confirm_input_button_pressed():
 	Food = get_node("HBox_Food/Food_Val").value
@@ -31,7 +31,8 @@ func _on_confirm_input_button_pressed():
 	
 	userData.save_data([Food, Water, Sleep, Stress, Activity])
 	
-	get_node("Input Button/Input_Confirm").visible=false
+	get_node("Input_Button/Input_Confirm").visible=false
 	
-	%Output.update_output()
-	%History.update_contents()
+	get_node("%Output").update_output()
+	get_node("%History").update_contents()
+

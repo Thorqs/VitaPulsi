@@ -1,0 +1,816 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://History.gd" type="Script" id=1]
+[ext_resource path="res://Settings.gd" type="Script" id=2]
+[ext_resource path="res://Input.gd" type="Script" id=3]
+[ext_resource path="res://radar_display.gd" type="Script" id=4]
+[ext_resource path="res://Main Menu.gd" type="Script" id=5]
+[ext_resource path="res://Resources/Hist_Item.tscn" type="PackedScene" id=6]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="HBox" type="HBoxContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Left_Border" type="Control" parent="Panel/HBox"]
+margin_right = 25.0
+margin_bottom = 960.0
+rect_min_size = Vector2( 25, 0 )
+
+[node name="VBox" type="VBoxContainer" parent="Panel/HBox"]
+margin_left = 29.0
+margin_right = 511.0
+margin_bottom = 960.0
+size_flags_horizontal = 3
+
+[node name="Upper_Border" type="Control" parent="Panel/HBox/VBox"]
+margin_right = 482.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 0, 25 )
+
+[node name="Title" type="Label" parent="Panel/HBox/VBox"]
+margin_top = 29.0
+margin_right = 482.0
+margin_bottom = 43.0
+text = "LifePulse"
+align = 1
+
+[node name="Title_Spacer" type="Control" parent="Panel/HBox/VBox"]
+margin_top = 47.0
+margin_right = 482.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 0, 25 )
+
+[node name="Panel" type="Panel" parent="Panel/HBox/VBox"]
+margin_top = 76.0
+margin_right = 482.0
+margin_bottom = 101.0
+rect_min_size = Vector2( 0, 25 )
+
+[node name="Main" type="VBoxContainer" parent="Panel/HBox/VBox"]
+unique_name_in_owner = true
+visible = false
+margin_top = 105.0
+margin_right = 482.0
+margin_bottom = 516.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 5 )
+
+[node name="Button_Spacer" type="Control" parent="Panel/HBox/VBox/Main"]
+margin_right = 482.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 0, 75 )
+size_flags_vertical = 3
+
+[node name="MM_IO_Buttons" type="HBoxContainer" parent="Panel/HBox/VBox/Main"]
+margin_top = 132.0
+margin_right = 482.0
+margin_bottom = 152.0
+size_flags_horizontal = 3
+
+[node name="MM_Input_Button" type="Button" parent="Panel/HBox/VBox/Main/MM_IO_Buttons"]
+margin_right = 239.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "Input"
+
+[node name="MM_Output_Button" type="Button" parent="Panel/HBox/VBox/Main/MM_IO_Buttons"]
+margin_left = 243.0
+margin_right = 482.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "Output"
+
+[node name="Button_Spacer2" type="Control" parent="Panel/HBox/VBox/Main"]
+margin_top = 156.0
+margin_right = 482.0
+margin_bottom = 206.0
+rect_min_size = Vector2( 0, 50 )
+
+[node name="MM_History_Button" type="Button" parent="Panel/HBox/VBox/Main"]
+margin_top = 210.0
+margin_right = 482.0
+margin_bottom = 230.0
+text = "History"
+
+[node name="Button_Spacer3" type="Control" parent="Panel/HBox/VBox/Main"]
+margin_top = 234.0
+margin_right = 482.0
+margin_bottom = 363.0
+rect_min_size = Vector2( 0, 25 )
+size_flags_vertical = 3
+
+[node name="MM_Settings_Button" type="Button" parent="Panel/HBox/VBox/Main"]
+margin_top = 367.0
+margin_right = 482.0
+margin_bottom = 387.0
+text = "Settings"
+
+[node name="MM_Exit_Button" type="Button" parent="Panel/HBox/VBox/Main"]
+margin_top = 391.0
+margin_right = 482.0
+margin_bottom = 411.0
+text = "Exit Application"
+
+[node name="Settings" type="VBoxContainer" parent="Panel/HBox/VBox"]
+unique_name_in_owner = true
+visible = false
+margin_top = 105.0
+margin_right = 482.0
+margin_bottom = 516.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 2 )
+
+[node name="STopSpacer" type="Control" parent="Panel/HBox/VBox/Settings"]
+margin_right = 482.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 0, 25 )
+
+[node name="Settings" type="Label" parent="Panel/HBox/VBox/Settings"]
+margin_top = 29.0
+margin_right = 482.0
+margin_bottom = 43.0
+text = "- Purpose -"
+align = 1
+
+[node name="SMidSpacer" type="Control" parent="Panel/HBox/VBox/Settings"]
+margin_top = 47.0
+margin_right = 482.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 0, 25 )
+
+[node name="Purpose" type="Label" parent="Panel/HBox/VBox/Settings"]
+margin_top = 76.0
+margin_right = 482.0
+margin_bottom = 209.0
+size_flags_horizontal = 3
+text = "Lifepulse is an attempt to monitor common health habits and present them to the user in a way that shows what they are doing well, and what they can be doing better.
+
+Ideally the user will make a log each day. Once the habit is formed this process should only take a few minutes. After a few weeks, Lifepulse should have enough data to give a relatively accurate view of the users current lifestyle."
+autowrap = true
+
+[node name="PSpacer" type="Control" parent="Panel/HBox/VBox/Settings"]
+margin_top = 213.0
+margin_right = 482.0
+margin_bottom = 254.0
+size_flags_vertical = 3
+
+[node name="Data_Clear" type="Label" parent="Panel/HBox/VBox/Settings"]
+margin_top = 258.0
+margin_right = 482.0
+margin_bottom = 289.0
+text = "If necessary, below is the button to wipe all saved data.
+Only press if you are certain you want to delete ALL logs."
+
+[node name="DClearSpacer" type="Control" parent="Panel/HBox/VBox/Settings"]
+margin_top = 293.0
+margin_right = 482.0
+margin_bottom = 318.0
+rect_min_size = Vector2( 0, 25 )
+
+[node name="Clear_Button" type="Button" parent="Panel/HBox/VBox/Settings"]
+margin_top = 322.0
+margin_right = 482.0
+margin_bottom = 342.0
+text = "Delete ALL Logs"
+
+[node name="Popup" type="Popup" parent="Panel/HBox/VBox/Settings/Clear_Button"]
+margin_right = 300.0
+margin_bottom = 300.0
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Panel" type="Panel" parent="Panel/HBox/VBox/Settings/Clear_Button/Popup"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = -150.0
+margin_right = 150.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 300, 300 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBox/VBox/Settings/Clear_Button/Popup/Panel"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Confirm_Label" type="Label" parent="Panel/HBox/VBox/Settings/Clear_Button/Popup/Panel/VBoxContainer"]
+margin_right = 211.0
+margin_bottom = 133.0
+text = "
+You are about to delete ALL data.
+This cannot be undone.
+
+Are you sure you 
+want to continue?
+
+"
+
+[node name="Confirm_Button" type="Button" parent="Panel/HBox/VBox/Settings/Clear_Button/Popup/Panel/VBoxContainer"]
+margin_top = 137.0
+margin_right = 211.0
+margin_bottom = 157.0
+text = "Confirm"
+
+[node name="Cancel_Button" type="Button" parent="Panel/HBox/VBox/Settings/Clear_Button/Popup/Panel/VBoxContainer"]
+margin_top = 161.0
+margin_right = 211.0
+margin_bottom = 181.0
+text = "Cancel"
+
+[node name="DynamicSpacer" type="Control" parent="Panel/HBox/VBox/Settings"]
+margin_top = 346.0
+margin_right = 482.0
+margin_bottom = 387.0
+size_flags_vertical = 3
+
+[node name="ReturnToMainButton" type="Button" parent="Panel/HBox/VBox/Settings"]
+margin_top = 391.0
+margin_right = 482.0
+margin_bottom = 411.0
+text = "Return to Main Menu"
+
+[node name="History" type="VBoxContainer" parent="Panel/HBox/VBox"]
+unique_name_in_owner = true
+visible = false
+margin_top = 520.0
+margin_right = 482.0
+margin_bottom = 931.0
+size_flags_vertical = 3
+script = ExtResource( 1 )
+base_history = ExtResource( 6 )
+
+[node name="History_Top_Spacer" type="Control" parent="Panel/HBox/VBox/History"]
+margin_right = 482.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 0, 25 )
+
+[node name="History_Scroll" type="ScrollContainer" parent="Panel/HBox/VBox/History"]
+margin_top = 29.0
+margin_right = 482.0
+margin_bottom = 358.0
+size_flags_vertical = 3
+
+[node name="History_Contents" type="GridContainer" parent="Panel/HBox/VBox/History/History_Scroll"]
+columns = 3
+
+[node name="History_Bottom_Spacer" type="Control" parent="Panel/HBox/VBox/History"]
+margin_top = 362.0
+margin_right = 482.0
+margin_bottom = 387.0
+rect_min_size = Vector2( 0, 25 )
+
+[node name="History_Return_to_Main" type="Button" parent="Panel/HBox/VBox/History"]
+margin_top = 391.0
+margin_right = 482.0
+margin_bottom = 411.0
+text = "Return to Main Menu"
+
+[node name="Input" type="VBoxContainer" parent="Panel/HBox/VBox"]
+unique_name_in_owner = true
+visible = false
+margin_top = 363.0
+margin_right = 482.0
+margin_bottom = 943.0
+size_flags_vertical = 3
+script = ExtResource( 3 )
+
+[node name="Top_Spacer" type="Control" parent="Panel/HBox/VBox/Input"]
+margin_right = 482.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 0, 25 )
+
+[node name="Instruct_Label" type="Label" parent="Panel/HBox/VBox/Input"]
+margin_top = 29.0
+margin_right = 482.0
+margin_bottom = 43.0
+text = "In the last day, on a scale of 1 to 10, how would you rate your:"
+align = 1
+valign = 1
+
+[node name="Mid_spacer" type="Control" parent="Panel/HBox/VBox/Input"]
+margin_top = 47.0
+margin_right = 482.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 0, 25 )
+
+[node name="HBox_Food" type="HBoxContainer" parent="Panel/HBox/VBox/Input"]
+margin_top = 76.0
+margin_right = 482.0
+margin_bottom = 100.0
+
+[node name="Food_Label" type="Label" parent="Panel/HBox/VBox/Input/HBox_Food"]
+margin_top = 5.0
+margin_right = 87.0
+margin_bottom = 19.0
+text = "Eating habits?"
+
+[node name="Food_spacer" type="Control" parent="Panel/HBox/VBox/Input/HBox_Food"]
+margin_left = 91.0
+margin_right = 404.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+
+[node name="Food_Val" type="SpinBox" parent="Panel/HBox/VBox/Input/HBox_Food"]
+margin_left = 408.0
+margin_right = 482.0
+margin_bottom = 24.0
+min_value = 1.0
+max_value = 10.0
+value = 5.0
+rounded = true
+
+[node name="Food_Label" type="Label" parent="Panel/HBox/VBox/Input"]
+margin_top = 104.0
+margin_right = 482.0
+margin_bottom = 135.0
+text = "One would be a very poor diet, low in nutritional value.
+Ten would be a perfect diet, meeting your every need."
+valign = 1
+
+[node name="Mid_spacer2" type="Control" parent="Panel/HBox/VBox/Input"]
+margin_top = 139.0
+margin_right = 482.0
+margin_bottom = 164.0
+rect_min_size = Vector2( 0, 25 )
+
+[node name="HBox_Water" type="HBoxContainer" parent="Panel/HBox/VBox/Input"]
+margin_top = 168.0
+margin_right = 482.0
+margin_bottom = 192.0
+
+[node name="Water_Label" type="Label" parent="Panel/HBox/VBox/Input/HBox_Water"]
+margin_top = 5.0
+margin_right = 87.0
+margin_bottom = 19.0
+text = "Water intake?"
+
+[node name="Water_spacer" type="Control" parent="Panel/HBox/VBox/Input/HBox_Water"]
+margin_left = 91.0
+margin_right = 404.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+
+[node name="Water_Val" type="SpinBox" parent="Panel/HBox/VBox/Input/HBox_Water"]
+margin_left = 408.0
+margin_right = 482.0
+margin_bottom = 24.0
+min_value = 1.0
+max_value = 10.0
+value = 5.0
+rounded = true
+
+[node name="Water_Label" type="Label" parent="Panel/HBox/VBox/Input"]
+margin_top = 196.0
+margin_right = 482.0
+margin_bottom = 227.0
+text = "One would likely be too little, or no, water.
+Ten would be the perfect amount of water for that person."
+
+[node name="Mid_spacer3" type="Control" parent="Panel/HBox/VBox/Input"]
+margin_top = 231.0
+margin_right = 482.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 0, 25 )
+
+[node name="HBox_Sleep" type="HBoxContainer" parent="Panel/HBox/VBox/Input"]
+margin_top = 260.0
+margin_right = 482.0
+margin_bottom = 284.0
+
+[node name="Sleep_Label" type="Label" parent="Panel/HBox/VBox/Input/HBox_Sleep"]
+margin_top = 5.0
+margin_right = 107.0
+margin_bottom = 19.0
+text = "Quality of Sleep?"
+
+[node name="Sleep_spacer" type="Control" parent="Panel/HBox/VBox/Input/HBox_Sleep"]
+margin_left = 111.0
+margin_right = 404.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+
+[node name="Sleep_Val" type="SpinBox" parent="Panel/HBox/VBox/Input/HBox_Sleep"]
+margin_left = 408.0
+margin_right = 482.0
+margin_bottom = 24.0
+min_value = 1.0
+max_value = 10.0
+value = 5.0
+rounded = true
+
+[node name="Sleep_Label" type="Label" parent="Panel/HBox/VBox/Input"]
+margin_top = 288.0
+margin_right = 482.0
+margin_bottom = 319.0
+text = "One would likely be too little, or no, sleep.
+Ten would be the perfect amount of sleep for that person."
+
+[node name="Mid_spacer4" type="Control" parent="Panel/HBox/VBox/Input"]
+margin_top = 323.0
+margin_right = 482.0
+margin_bottom = 348.0
+rect_min_size = Vector2( 0, 25 )
+
+[node name="HBox_Stress" type="HBoxContainer" parent="Panel/HBox/VBox/Input"]
+margin_top = 352.0
+margin_right = 482.0
+margin_bottom = 376.0
+
+[node name="Stress_Label" type="Label" parent="Panel/HBox/VBox/Input/HBox_Stress"]
+margin_top = 5.0
+margin_right = 161.0
+margin_bottom = 19.0
+text = "Ability to manage stress?"
+
+[node name="Stress_spacer" type="Control" parent="Panel/HBox/VBox/Input/HBox_Stress"]
+margin_left = 165.0
+margin_right = 404.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+
+[node name="Stress_Val" type="SpinBox" parent="Panel/HBox/VBox/Input/HBox_Stress"]
+margin_left = 408.0
+margin_right = 482.0
+margin_bottom = 24.0
+min_value = 1.0
+max_value = 10.0
+value = 5.0
+rounded = true
+
+[node name="Stress_Label" type="Label" parent="Panel/HBox/VBox/Input"]
+margin_top = 380.0
+margin_right = 482.0
+margin_bottom = 411.0
+text = "One would mean you are unable to manage current stressors.
+Ten would mean you are able to manage stressors perfectly."
+
+[node name="Mid_spacer5" type="Control" parent="Panel/HBox/VBox/Input"]
+margin_top = 415.0
+margin_right = 482.0
+margin_bottom = 440.0
+rect_min_size = Vector2( 0, 25 )
+
+[node name="HBox_Activity" type="HBoxContainer" parent="Panel/HBox/VBox/Input"]
+margin_top = 444.0
+margin_right = 482.0
+margin_bottom = 468.0
+
+[node name="Activity_Label" type="Label" parent="Panel/HBox/VBox/Input/HBox_Activity"]
+margin_top = 5.0
+margin_right = 150.0
+margin_bottom = 19.0
+text = "Physical activity levels?"
+
+[node name="Activity_spacer" type="Control" parent="Panel/HBox/VBox/Input/HBox_Activity"]
+margin_left = 154.0
+margin_right = 404.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+
+[node name="Activity_Val" type="SpinBox" parent="Panel/HBox/VBox/Input/HBox_Activity"]
+margin_left = 408.0
+margin_right = 482.0
+margin_bottom = 24.0
+min_value = 1.0
+max_value = 10.0
+value = 5.0
+rounded = true
+
+[node name="Activity_Label" type="Label" parent="Panel/HBox/VBox/Input"]
+margin_top = 472.0
+margin_right = 482.0
+margin_bottom = 503.0
+text = "One would be too little, or too much, activity.
+Ten would be the perfect amount of activity for that person."
+
+[node name="Button_Spacer" type="Control" parent="Panel/HBox/VBox/Input"]
+margin_top = 507.0
+margin_right = 482.0
+margin_bottom = 532.0
+rect_min_size = Vector2( 0, 25 )
+size_flags_vertical = 3
+
+[node name="Input_Button" type="Button" parent="Panel/HBox/VBox/Input"]
+margin_top = 536.0
+margin_right = 482.0
+margin_bottom = 556.0
+text = "Confirm Values"
+
+[node name="Input_Confirm" type="Popup" parent="Panel/HBox/VBox/Input/Input_Button"]
+visible = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 300, 300 )
+
+[node name="Input_Confirm_Panel" type="Panel" parent="Panel/HBox/VBox/Input/Input_Button/Input_Confirm"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBox/VBox/Input/Input_Button/Input_Confirm/Input_Confirm_Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Confirm_Label" type="Label" parent="Panel/HBox/VBox/Input/Input_Button/Input_Confirm/Input_Confirm_Panel/VBoxContainer"]
+margin_top = 93.0
+margin_right = 300.0
+margin_bottom = 158.0
+size_flags_vertical = 6
+text = "You are about to add data.
+This cannot be undone.
+
+Are you sure you want to continue?"
+align = 1
+
+[node name="Confirm_Button" type="Button" parent="Panel/HBox/VBox/Input/Input_Button/Input_Confirm/Input_Confirm_Panel/VBoxContainer"]
+margin_top = 256.0
+margin_right = 300.0
+margin_bottom = 276.0
+text = "Confirm"
+
+[node name="Cancel_button" type="Button" parent="Panel/HBox/VBox/Input/Input_Button/Input_Confirm/Input_Confirm_Panel/VBoxContainer"]
+margin_top = 280.0
+margin_right = 300.0
+margin_bottom = 300.0
+text = "Cancel"
+
+[node name="Input_Main_Menu_Button" type="Button" parent="Panel/HBox/VBox/Input"]
+margin_top = 560.0
+margin_right = 482.0
+margin_bottom = 580.0
+text = "Return to Main Menu"
+
+[node name="Output" type="Control" parent="Panel/HBox/VBox"]
+unique_name_in_owner = true
+margin_top = 105.0
+margin_right = 482.0
+margin_bottom = 931.0
+size_flags_vertical = 3
+script = ExtResource( 4 )
+
+[node name="10w" type="Polygon2D" parent="Panel/HBox/VBox/Output"]
+polygon = PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="9b" type="Polygon2D" parent="Panel/HBox/VBox/Output"]
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="8w" type="Polygon2D" parent="Panel/HBox/VBox/Output"]
+polygon = PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="7b" type="Polygon2D" parent="Panel/HBox/VBox/Output"]
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="6w" type="Polygon2D" parent="Panel/HBox/VBox/Output"]
+polygon = PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="5b" type="Polygon2D" parent="Panel/HBox/VBox/Output"]
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="4w" type="Polygon2D" parent="Panel/HBox/VBox/Output"]
+polygon = PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="3b" type="Polygon2D" parent="Panel/HBox/VBox/Output"]
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="2w" type="Polygon2D" parent="Panel/HBox/VBox/Output"]
+polygon = PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="1b" type="Polygon2D" parent="Panel/HBox/VBox/Output"]
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Food_Quad" type="Polygon2D" parent="Panel/HBox/VBox/Output"]
+color = Color( 0, 1, 0, 0.705882 )
+polygon = PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0 )
+
+[node name="Water_Quad" type="Polygon2D" parent="Panel/HBox/VBox/Output"]
+color = Color( 0, 1, 1, 0.705882 )
+polygon = PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0 )
+
+[node name="Sleep_Quad" type="Polygon2D" parent="Panel/HBox/VBox/Output"]
+color = Color( 0.870588, 0.337255, 1, 0.705882 )
+polygon = PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0 )
+
+[node name="Stress_Quad" type="Polygon2D" parent="Panel/HBox/VBox/Output"]
+color = Color( 1, 0, 0, 0.705882 )
+polygon = PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0 )
+
+[node name="Activity_Quad" type="Polygon2D" parent="Panel/HBox/VBox/Output"]
+color = Color( 1, 1, 0, 0.705882 )
+polygon = PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0 )
+
+[node name="10" type="Label" parent="Panel/HBox/VBox/Output"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "10"
+align = 1
+
+[node name="8" type="Label" parent="Panel/HBox/VBox/Output"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "8"
+align = 1
+
+[node name="6" type="Label" parent="Panel/HBox/VBox/Output"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "6"
+align = 1
+
+[node name="4" type="Label" parent="Panel/HBox/VBox/Output"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "4"
+align = 1
+
+[node name="2" type="Label" parent="Panel/HBox/VBox/Output"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "2"
+align = 1
+
+[node name="Food_label" type="Label" parent="Panel/HBox/VBox/Output"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "Food"
+
+[node name="Water_label" type="Label" parent="Panel/HBox/VBox/Output"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "Water"
+
+[node name="Sleep_label" type="Label" parent="Panel/HBox/VBox/Output"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "Sleep"
+
+[node name="Stress_label" type="Label" parent="Panel/HBox/VBox/Output"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "Stress"
+
+[node name="Activity_label" type="Label" parent="Panel/HBox/VBox/Output"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "Activity"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBox/VBox/Output"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+
+[node name="Top_Spacer" type="Control" parent="Panel/HBox/VBox/Output/VBoxContainer"]
+margin_right = 482.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 0, 25 )
+
+[node name="WYDW_Q_Label" type="Label" parent="Panel/HBox/VBox/Output/VBoxContainer"]
+margin_top = 29.0
+margin_right = 482.0
+margin_bottom = 43.0
+text = "You are doing the following well:"
+align = 1
+
+[node name="WYDW_A_Label" type="Label" parent="Panel/HBox/VBox/Output/VBoxContainer"]
+margin_top = 47.0
+margin_right = 482.0
+margin_bottom = 61.0
+align = 1
+
+[node name="UMid_Spacer" type="Control" parent="Panel/HBox/VBox/Output/VBoxContainer"]
+margin_top = 65.0
+margin_right = 482.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 0, 25 )
+
+[node name="WYDOK_Q_Label" type="Label" parent="Panel/HBox/VBox/Output/VBoxContainer"]
+margin_top = 94.0
+margin_right = 482.0
+margin_bottom = 108.0
+text = "You are doing the following okay"
+align = 1
+
+[node name="WYDOK_A_Label" type="Label" parent="Panel/HBox/VBox/Output/VBoxContainer"]
+margin_top = 112.0
+margin_right = 482.0
+margin_bottom = 126.0
+align = 1
+
+[node name="LMid_Spacer" type="Control" parent="Panel/HBox/VBox/Output/VBoxContainer"]
+margin_top = 130.0
+margin_right = 482.0
+margin_bottom = 155.0
+rect_min_size = Vector2( 0, 25 )
+
+[node name="WYDP_Q_Label" type="Label" parent="Panel/HBox/VBox/Output/VBoxContainer"]
+margin_top = 159.0
+margin_right = 482.0
+margin_bottom = 173.0
+text = "You could be doing the following better:"
+align = 1
+
+[node name="WYDP_A_Label" type="Label" parent="Panel/HBox/VBox/Output/VBoxContainer"]
+margin_top = 177.0
+margin_right = 482.0
+margin_bottom = 191.0
+align = 1
+
+[node name="Bot_Spacer" type="Control" parent="Panel/HBox/VBox/Output/VBoxContainer"]
+margin_top = 195.0
+margin_right = 482.0
+margin_bottom = 260.0
+rect_min_size = Vector2( 0, 65 )
+
+[node name="Output_Return_to_Main" type="Button" parent="Panel/HBox/VBox/Output/VBoxContainer"]
+margin_top = 264.0
+margin_right = 482.0
+margin_bottom = 284.0
+text = "Return to Main Menu"
+
+[node name="Lower_Border" type="Control" parent="Panel/HBox/VBox"]
+margin_top = 935.0
+margin_right = 482.0
+margin_bottom = 960.0
+rect_min_size = Vector2( 0, 25 )
+size_flags_horizontal = 3
+
+[node name="Right_Border" type="Control" parent="Panel/HBox"]
+margin_left = 515.0
+margin_right = 540.0
+margin_bottom = 960.0
+rect_min_size = Vector2( 25, 0 )
+
+[connection signal="pressed" from="Panel/HBox/VBox/Main/MM_IO_Buttons/MM_Input_Button" to="Panel/HBox/VBox/Main" method="_on_mm_input_button_pressed"]
+[connection signal="pressed" from="Panel/HBox/VBox/Main/MM_IO_Buttons/MM_Output_Button" to="Panel/HBox/VBox/Main" method="_on_mm_output_button_pressed"]
+[connection signal="pressed" from="Panel/HBox/VBox/Main/MM_History_Button" to="Panel/HBox/VBox/Main" method="_on_mm_history_button_pressed"]
+[connection signal="pressed" from="Panel/HBox/VBox/Main/MM_Settings_Button" to="Panel/HBox/VBox/Main" method="_on_mm_settings_button_pressed"]
+[connection signal="pressed" from="Panel/HBox/VBox/Main/MM_Exit_Button" to="Panel/HBox/VBox/Main" method="_on_mm_exit_button_pressed"]
+[connection signal="pressed" from="Panel/HBox/VBox/Settings/Clear_Button" to="Panel/HBox/VBox/Settings" method="_on_clear_button_pressed"]
+[connection signal="pressed" from="Panel/HBox/VBox/Settings/Clear_Button/Popup/Panel/VBoxContainer/Confirm_Button" to="Panel/HBox/VBox/Settings" method="_on_confirm_button_pressed"]
+[connection signal="pressed" from="Panel/HBox/VBox/Settings/Clear_Button/Popup/Panel/VBoxContainer/Cancel_Button" to="Panel/HBox/VBox/Settings" method="_on_clear_cancel_button_pressed"]
+[connection signal="pressed" from="Panel/HBox/VBox/Settings/ReturnToMainButton" to="Panel/HBox/VBox/Settings" method="_on_return_to_main_button_pressed"]
+[connection signal="pressed" from="Panel/HBox/VBox/History/History_Return_to_Main" to="Panel/HBox/VBox/History" method="_on_history_return_to_main_pressed"]
+[connection signal="pressed" from="Panel/HBox/VBox/Input/Input_Button" to="Panel/HBox/VBox/Input" method="_on_input_confirm_button_pressed"]
+[connection signal="pressed" from="Panel/HBox/VBox/Input/Input_Button/Input_Confirm/Input_Confirm_Panel/VBoxContainer/Confirm_Button" to="Panel/HBox/VBox/Input" method="_on_confirm_input_button_pressed"]
+[connection signal="pressed" from="Panel/HBox/VBox/Input/Input_Button/Input_Confirm/Input_Confirm_Panel/VBoxContainer/Cancel_button" to="Panel/HBox/VBox/Input" method="_on_input_cancel_button_pressed"]
+[connection signal="pressed" from="Panel/HBox/VBox/Input/Input_Main_Menu_Button" to="Panel/HBox/VBox/Input" method="_on_return_to_main_button"]
+[connection signal="pressed" from="Panel/HBox/VBox/Output/VBoxContainer/Output_Return_to_Main" to="Panel/HBox/VBox/Output" method="_on_output_return_to_main_pressed"]

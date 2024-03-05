@@ -1,21 +1,22 @@
 extends Resource
 class_name UserData
 
-var save_file_path = "user://save/"
+var save_file_path = "user://"
 var save_file_name = "UserData.csv"
 
 var history_data: Dictionary
 
 func load_data():
-	DirAccess.make_dir_absolute(save_file_path)
+	#Directory.make_dir_absolute(save_file_path) # don't know if this is actually needed...
 	#if ResourceLoader.exists(save_file_path + save_file_name):
 	#	var temp = ResourceLoader.load(save_file_path + save_file_name)
-	if FileAccess.file_exists(save_file_path + save_file_name):
-		var load_file = FileAccess.open(save_file_path + save_file_name, FileAccess.READ)
+	var load_file = File.new()
+	if load_file.file_exists(save_file_path + save_file_name):
+		load_file.open(save_file_path + save_file_name, File.READ)
 		var line = ""
 		var contents = []
-		var day_data: Array[int]
-		while load_file.get_position() < load_file.get_length():
+		var day_data
+		while load_file.get_position() < load_file.get_len():
 			line = load_file.get_line()
 			contents = line.split(", ")
 			#for item in contents:
@@ -27,11 +28,12 @@ func load_data():
 			
 		print("Loaded ", history_data)
 
-func save_data(values: Array[int], day = Time.get_date_string_from_system()):
+func save_data(values, day = Time.get_date_string_from_system()):
 	history_data[day] = values
 	print("saving ", values, day)
 	#ResourceSaver.save(self, save_file_path + save_file_name)
-	var save_file = FileAccess.open(save_file_path + save_file_name, FileAccess.WRITE)
+	var save_file = File.new()
+	save_file.open(save_file_path + save_file_name, File.WRITE)
 	for date in history_data:
 		save_file.store_line(date + ", " + str(history_data[date]).lstrip("[").rstrip("]"))
 
@@ -54,7 +56,7 @@ func calc_means(days = 90):
 		if history_data.size() >= days:
 			for index in range(0,5):
 				for day in range(0, days):
-						means[index] += history_data[days][index]
+					means[index] += history_data[day][index]
 				means[index] = means[index]/days
 		else:
 			for index in range(0,5):

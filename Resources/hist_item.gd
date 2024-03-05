@@ -1,6 +1,6 @@
 extends Panel
 
-@export var date_label: Label
+var date_label: Label
 var food_val: Label
 var water_val: Label
 var sleep_val: Label
@@ -26,24 +26,24 @@ func set_date(new_date: String):
 
 func set_val(val_name: Label, new_value: int):
 	val_name.text = val_name.text.get_slice(":", 0) + ":" + str(new_value)
-	if new_value > 7:
-		val_name.add_theme_color_override("theme_override_colors/font_color", Color("Green"))
-	elif new_value > 3:
-		val_name.add_theme_color_override("theme_override_colors/font_color", Color("Yellow"))
-	else:
-		val_name.add_theme_color_override("theme_override_colors/font_color", Color("Red"))
+	#if new_value > 7:
+	#	val_name.add_theme_color_override("theme_override_colors/font_color", Color("Green"))
+	#elif new_value > 3:
+	#	val_name.add_theme_color_override("theme_override_colors/font_color", Color("Yellow"))
+	#else:
+	#	val_name.add_theme_color_override("theme_override_colors/font_color", Color("Red"))
 
-func update_data(new_values: Array[int]):
+func update_data(new_values: Array):
 	set_val(food_val, new_values[0])
 	set_val(water_val, new_values[1])
 	set_val(sleep_val, new_values[2])
 	set_val(stress_val, new_values[3])
 	set_val(activity_val, new_values[4])
 	
-	var mean_value = (new_values[0] + new_values[1] + new_values[2] + new_values[3] + new_values[4])/5.0
-	if mean_value > 7:
-		date_label.add_theme_color_override("theme_override_colors/font_color", Color("Green"))
-	elif mean_value > 3:
-		date_label.add_theme_color_override("theme_override_colors/font_color", Color("Yellow"))
-	else:
-		date_label.add_theme_color_override("theme_override_colors/font_color", Color("Red"))
+	#var mean_value = (new_values[0] + new_values[1] + new_values[2] + new_values[3] + new_values[4])/5.0
+	#if mean_value > 7:
+	#	date_label.add_theme_color_override("theme_override_colors/font_color", Color("Green"))
+	#elif mean_value > 3:
+	#	date_label.add_theme_color_override("theme_override_colors/font_color", Color("Yellow"))
+	#else:
+	#	date_label.add_theme_color_override("theme_override_colors/font_color", Color("Red"))
