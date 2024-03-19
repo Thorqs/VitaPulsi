@@ -8,6 +8,7 @@ export_presets.cfg
 # Android
 android/
 *.apk
+*.apk.*
 .idea/
 
 # Windows

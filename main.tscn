@@ -56,24 +56,23 @@ rect_min_size = Vector2( 0, 25 )
 
 [node name="Main" type="VBoxContainer" parent="Panel/HBox/VBox"]
 unique_name_in_owner = true
-visible = false
 margin_top = 105.0
 margin_right = 482.0
-margin_bottom = 516.0
+margin_bottom = 931.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 5 )
 
 [node name="Button_Spacer" type="Control" parent="Panel/HBox/VBox/Main"]
 margin_right = 482.0
-margin_bottom = 128.0
+margin_bottom = 336.0
 rect_min_size = Vector2( 0, 75 )
 size_flags_vertical = 3
 
 [node name="MM_IO_Buttons" type="HBoxContainer" parent="Panel/HBox/VBox/Main"]
-margin_top = 132.0
+margin_top = 340.0
 margin_right = 482.0
-margin_bottom = 152.0
+margin_bottom = 360.0
 size_flags_horizontal = 3
 
 [node name="MM_Input_Button" type="Button" parent="Panel/HBox/VBox/Main/MM_IO_Buttons"]
@@ -90,34 +89,34 @@ size_flags_horizontal = 3
 text = "Output"
 
 [node name="Button_Spacer2" type="Control" parent="Panel/HBox/VBox/Main"]
-margin_top = 156.0
+margin_top = 364.0
 margin_right = 482.0
-margin_bottom = 206.0
+margin_bottom = 414.0
 rect_min_size = Vector2( 0, 50 )
 
 [node name="MM_History_Button" type="Button" parent="Panel/HBox/VBox/Main"]
-margin_top = 210.0
+margin_top = 418.0
 margin_right = 482.0
-margin_bottom = 230.0
+margin_bottom = 438.0
 text = "History"
 
 [node name="Button_Spacer3" type="Control" parent="Panel/HBox/VBox/Main"]
-margin_top = 234.0
+margin_top = 442.0
 margin_right = 482.0
-margin_bottom = 363.0
+margin_bottom = 778.0
 rect_min_size = Vector2( 0, 25 )
 size_flags_vertical = 3
 
 [node name="MM_Settings_Button" type="Button" parent="Panel/HBox/VBox/Main"]
-margin_top = 367.0
+margin_top = 782.0
 margin_right = 482.0
-margin_bottom = 387.0
+margin_bottom = 802.0
 text = "Settings"
 
 [node name="MM_Exit_Button" type="Button" parent="Panel/HBox/VBox/Main"]
-margin_top = 391.0
+margin_top = 806.0
 margin_right = 482.0
-margin_bottom = 411.0
+margin_bottom = 826.0
 text = "Exit Application"
 
 [node name="Settings" type="VBoxContainer" parent="Panel/HBox/VBox"]
@@ -561,7 +560,8 @@ text = "Return to Main Menu"
 
 [node name="Output" type="Control" parent="Panel/HBox/VBox"]
 unique_name_in_owner = true
-margin_top = 105.0
+visible = false
+margin_top = 520.0
 margin_right = 482.0
 margin_bottom = 931.0
 size_flags_vertical = 3
