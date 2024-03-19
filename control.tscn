@@ -323,6 +323,30 @@ value = 5.0
 rounded = true
 tick_count = 10
 
+[node name="Food Optionbutton" type="OptionButton" parent="Panel/HBox/VBox/Input/HBox_Food"]
+layout_mode = 2
+item_count = 10
+popup/item_0/text = "1"
+popup/item_0/id = 0
+popup/item_1/text = "2"
+popup/item_1/id = 1
+popup/item_2/text = "3"
+popup/item_2/id = 2
+popup/item_3/text = "4"
+popup/item_3/id = 3
+popup/item_4/text = "5"
+popup/item_4/id = 4
+popup/item_5/text = "6"
+popup/item_5/id = 5
+popup/item_6/text = "7"
+popup/item_6/id = 6
+popup/item_7/text = "8"
+popup/item_7/id = 7
+popup/item_8/text = "9"
+popup/item_8/id = 8
+popup/item_9/text = "10"
+popup/item_9/id = 9
+
 [node name="Food Label" type="Label" parent="Panel/HBox/VBox/Input"]
 layout_mode = 2
 text = "One would be a very poor diet, low in nutritional value.
@@ -458,6 +482,30 @@ max_value = 10.0
 value = 5.0
 rounded = true
 tick_count = 10
+
+[node name="Activity Optionbutton" type="OptionButton" parent="Panel/HBox/VBox/Input/HBox_Activity"]
+layout_mode = 2
+item_count = 10
+popup/item_0/text = "1"
+popup/item_0/id = 0
+popup/item_1/text = "2"
+popup/item_1/id = 1
+popup/item_2/text = "3"
+popup/item_2/id = 2
+popup/item_3/text = "4"
+popup/item_3/id = 3
+popup/item_4/text = "5"
+popup/item_4/id = 4
+popup/item_5/text = "6"
+popup/item_5/id = 5
+popup/item_6/text = "7"
+popup/item_6/id = 6
+popup/item_7/text = "8"
+popup/item_7/id = 7
+popup/item_8/text = "9"
+popup/item_8/id = 8
+popup/item_9/text = "10"
+popup/item_9/id = 9
 
 [node name="Activity Label" type="Label" parent="Panel/HBox/VBox/Input"]
 layout_mode = 2
@@ -727,7 +775,7 @@ layout_mode = 2
 
 [node name="WYDW_Q_Label" type="Label" parent="Panel/HBox/VBox/Output/VBoxContainer"]
 layout_mode = 2
-text = "You are doing the following well:"
+text = "You are doing the following exceptionally:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -741,7 +789,7 @@ layout_mode = 2
 
 [node name="WYDOK_Q_Label" type="Label" parent="Panel/HBox/VBox/Output/VBoxContainer"]
 layout_mode = 2
-text = "You are doing the following okay:"
+text = "You are doing the following well:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -755,7 +803,7 @@ layout_mode = 2
 
 [node name="WYDP_Q_Label" type="Label" parent="Panel/HBox/VBox/Output/VBoxContainer"]
 layout_mode = 2
-text = "You could be doing the following better:"
+text = "These are areas that you can improve on:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
