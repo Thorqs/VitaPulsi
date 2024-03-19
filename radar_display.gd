@@ -17,7 +17,7 @@ var WYDW_label: Label
 var WYDOK_label: Label
 var WYDP_label: Label
 
-const radar_offset = Vector2(245, 250)
+var radar_offset = Vector2(331, 250)
 const radar_scaling = 20
 
 # corners of identity pentagons

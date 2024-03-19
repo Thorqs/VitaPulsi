@@ -37,9 +37,12 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_7fqm5")
 
 [node name="HBox" type="HBoxContainer" parent="Panel"]
-layout_mode = 0
-offset_right = 540.0
-offset_bottom = 960.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Left Border" type="Control" parent="Panel/HBox"]
 custom_minimum_size = Vector2(25, 0)
@@ -71,6 +74,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_8pyq2")
 
 [node name="Main" type="VBoxContainer" parent="Panel/HBox/VBox"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 10
@@ -275,7 +279,6 @@ vertical_icon_alignment = 2
 
 [node name="Input" type="VBoxContainer" parent="Panel/HBox/VBox"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 script = ExtResource("1_n1rqy")
@@ -308,11 +311,17 @@ text = "Eating habits?"
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Food_Val" type="SpinBox" parent="Panel/HBox/VBox/Input/HBox_Food"]
+[node name="Food_Value" type="Label" parent="Panel/HBox/VBox/Input/HBox_Food"]
+layout_mode = 2
+text = "5"
+
+[node name="Food_Slider" type="HSlider" parent="Panel/HBox/VBox/Input"]
 layout_mode = 2
 min_value = 1.0
 max_value = 10.0
 value = 5.0
+rounded = true
+tick_count = 10
 
 [node name="Food Label" type="Label" parent="Panel/HBox/VBox/Input"]
 layout_mode = 2
@@ -336,11 +345,17 @@ text = "Water intake?"
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Water_Val" type="SpinBox" parent="Panel/HBox/VBox/Input/HBox_Water"]
+[node name="Water_Value" type="Label" parent="Panel/HBox/VBox/Input/HBox_Water"]
+layout_mode = 2
+text = "5"
+
+[node name="Water_Slider" type="HSlider" parent="Panel/HBox/VBox/Input"]
 layout_mode = 2
 min_value = 1.0
 max_value = 10.0
 value = 5.0
+rounded = true
+tick_count = 10
 
 [node name="Water Label" type="Label" parent="Panel/HBox/VBox/Input"]
 layout_mode = 2
@@ -364,11 +379,17 @@ text = "Quality of sleep?"
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Sleep_Val" type="SpinBox" parent="Panel/HBox/VBox/Input/HBox_Sleep"]
+[node name="Sleep_Value" type="Label" parent="Panel/HBox/VBox/Input/HBox_Sleep"]
+layout_mode = 2
+text = "5"
+
+[node name="Sleep_Slider" type="HSlider" parent="Panel/HBox/VBox/Input"]
 layout_mode = 2
 min_value = 1.0
 max_value = 10.0
 value = 5.0
+rounded = true
+tick_count = 10
 
 [node name="Sleep Label" type="Label" parent="Panel/HBox/VBox/Input"]
 layout_mode = 2
@@ -392,11 +413,17 @@ text = "Ability to manage stress?"
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Stress_Val" type="SpinBox" parent="Panel/HBox/VBox/Input/HBox_Stress"]
+[node name="Stress_Value" type="Label" parent="Panel/HBox/VBox/Input/HBox_Stress"]
+layout_mode = 2
+text = "5"
+
+[node name="Stress_Slider" type="HSlider" parent="Panel/HBox/VBox/Input"]
 layout_mode = 2
 min_value = 1.0
 max_value = 10.0
 value = 5.0
+rounded = true
+tick_count = 10
 
 [node name="Stress Label" type="Label" parent="Panel/HBox/VBox/Input"]
 layout_mode = 2
@@ -420,11 +447,17 @@ text = "Physical activity levels?"
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Activity_Val" type="SpinBox" parent="Panel/HBox/VBox/Input/HBox_Activity"]
+[node name="Activity_Value" type="Label" parent="Panel/HBox/VBox/Input/HBox_Activity"]
+layout_mode = 2
+text = "5"
+
+[node name="Activity_Slider" type="HSlider" parent="Panel/HBox/VBox/Input"]
 layout_mode = 2
 min_value = 1.0
 max_value = 10.0
 value = 5.0
+rounded = true
+tick_count = 10
 
 [node name="Activity Label" type="Label" parent="Panel/HBox/VBox/Input"]
 layout_mode = 2
@@ -760,6 +793,11 @@ layout_mode = 2
 [connection signal="pressed" from="Panel/HBox/VBox/Settings/Settings Return to Main" to="Panel/HBox/VBox/Settings" method="_on_return_to_main_button_pressed"]
 [connection signal="pressed" from="Panel/HBox/VBox/History/History Return to Main" to="Panel/HBox/VBox/History" method="_on_history_return_to_main_pressed"]
 [connection signal="visibility_changed" from="Panel/HBox/VBox/Input" to="Panel/HBox/VBox/Input" method="_on_visibility_changed"]
+[connection signal="value_changed" from="Panel/HBox/VBox/Input/Food_Slider" to="Panel/HBox/VBox/Input" method="_on_food_slider_value_changed"]
+[connection signal="value_changed" from="Panel/HBox/VBox/Input/Water_Slider" to="Panel/HBox/VBox/Input" method="_on_water_slider_value_changed"]
+[connection signal="value_changed" from="Panel/HBox/VBox/Input/Sleep_Slider" to="Panel/HBox/VBox/Input" method="_on_sleep_slider_value_changed"]
+[connection signal="value_changed" from="Panel/HBox/VBox/Input/Stress_Slider" to="Panel/HBox/VBox/Input" method="_on_stress_slider_value_changed"]
+[connection signal="value_changed" from="Panel/HBox/VBox/Input/Activity_Slider" to="Panel/HBox/VBox/Input" method="_on_activity_slider_value_changed"]
 [connection signal="pressed" from="Panel/HBox/VBox/Input/Input Button" to="Panel/HBox/VBox/Input" method="_on_input_confirm_button_pressed"]
 [connection signal="pressed" from="Panel/HBox/VBox/Input/Input Button/Input_Confirm/Input_Confirm_Panel/VBoxContainer/Confirm Button" to="Panel/HBox/VBox/Input" method="_on_confirm_input_button_pressed"]
 [connection signal="pressed" from="Panel/HBox/VBox/Input/Input Button/Input_Confirm/Input_Confirm_Panel/VBoxContainer/Cancel Button" to="Panel/HBox/VBox/Input" method="_on_input_cancel_button_pressed"]

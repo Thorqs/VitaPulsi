@@ -23,11 +23,11 @@ func _on_input_cancel_button_pressed():
 	get_node("Input Button/Input_Confirm").visible=false
 
 func _on_confirm_input_button_pressed():
-	Food = get_node("HBox_Food/Food_Val").value
-	Water = get_node("HBox_Water/Water_Val").value
-	Sleep = get_node("HBox_Sleep/Sleep_Val").value
-	Stress = get_node("HBox_Stress/Stress_Val").value
-	Activity = get_node("HBox_Activity/Activity_Val").value
+	Food = get_node("Food_Slider").value
+	Water = get_node("Water_Slider").value
+	Sleep = get_node("Sleep_Slider").value
+	Stress = get_node("Stress_Slider").value
+	Activity = get_node("Activity_Slider").value
 	
 	userData.save_data([Food, Water, Sleep, Stress, Activity])
 	
@@ -37,8 +37,23 @@ func _on_confirm_input_button_pressed():
 	%History.update_contents()
 
 func _on_visibility_changed():
-	get_node("HBox_Food/Food_Val").value = 5
-	get_node("HBox_Water/Water_Val").value = 5
-	get_node("HBox_Sleep/Sleep_Val").value = 5
-	get_node("HBox_Stress/Stress_Val").value = 5 
-	get_node("HBox_Activity/Activity_Val").value = 5
+	get_node("Food_Slider").value = 5
+	get_node("Water_Slider").value = 5
+	get_node("Sleep_Slider").value = 5
+	get_node("Stress_Slider").value = 5 
+	get_node("Activity_Slider").value = 5
+
+func _on_food_slider_value_changed(value):
+	get_node("HBox_Food/Food_Value").text = str(value)
+
+func _on_water_slider_value_changed(value):
+	get_node("HBox_Water/Water_Value").text = str(value)
+
+func _on_sleep_slider_value_changed(value):
+	get_node("HBox_Sleep/Sleep_Value").text = str(value)
+
+func _on_stress_slider_value_changed(value):
+	get_node("HBox_Stress/Stress_Value").text = str(value)
+
+func _on_activity_slider_value_changed(value):
+	get_node("HBox_Activity/Activity_Value").text = str(value)
