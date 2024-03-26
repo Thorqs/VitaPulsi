@@ -74,7 +74,6 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_8pyq2")
 
 [node name="Main" type="VBoxContainer" parent="Panel/HBox/VBox"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 10
@@ -279,6 +278,7 @@ vertical_icon_alignment = 2
 
 [node name="Input" type="VBoxContainer" parent="Panel/HBox/VBox"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 script = ExtResource("1_n1rqy")
@@ -286,6 +286,7 @@ script = ExtResource("1_n1rqy")
 [node name="Input Top Spacer" type="Control" parent="Panel/HBox/VBox/Input"]
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="Instruct_Label" type="Label" parent="Panel/HBox/VBox/Input"]
 layout_mode = 2
@@ -299,6 +300,7 @@ autowrap_mode = 2
 [node name="Input Mid Spacer" type="Control" parent="Panel/HBox/VBox/Input"]
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="HBox_Food" type="HBoxContainer" parent="Panel/HBox/VBox/Input"]
 layout_mode = 2
