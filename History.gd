@@ -34,3 +34,9 @@ func update_contents():
 func _on_history_return_to_main_pressed():
 	%Main.visible = true
 	self.visible = false
+
+
+
+
+func _on_history_contents_resized():
+	hist_grid.columns = int(floor((get_viewport_rect().size.x-40) / 160))

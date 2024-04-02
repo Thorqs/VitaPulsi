@@ -14,6 +14,9 @@ android/
 # Windows
 *.exe
 
+# Apple
+*.DS_store
+
 # Imported translations (automatically generated from CSV files)
 *.translation
 

@@ -189,7 +189,7 @@ func position_elements():
 	sleep_quad.position = radar_offset
 	stress_quad.position = radar_offset
 	activity_quad.position = radar_offset
-		
+	
 	food_label.position = radar_offset + 11*radar_scaling*pos0 - Vector2(food_label.size.x/2, food_label.size.y/4)
 	water_label.position = radar_offset + 11*radar_scaling*pos1 - Vector2(water_label.size.x/4, water_label.size.y/2)
 	sleep_label.position = radar_offset + 11*radar_scaling*pos2 - sleep_label.size/2

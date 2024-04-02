@@ -793,6 +793,7 @@ layout_mode = 2
 [connection signal="pressed" from="Panel/HBox/VBox/Settings/Clear_Button/Clear_Confirm/Clear_Confirm_Panel/VBoxContainer/Confirm Button" to="Panel/HBox/VBox/Settings" method="_on_confirm_button_pressed"]
 [connection signal="pressed" from="Panel/HBox/VBox/Settings/Clear_Button/Clear_Confirm/Clear_Confirm_Panel/VBoxContainer/Cancel Button" to="Panel/HBox/VBox/Settings" method="_on_clear_cancel_button_pressed"]
 [connection signal="pressed" from="Panel/HBox/VBox/Settings/Settings Return to Main" to="Panel/HBox/VBox/Settings" method="_on_return_to_main_button_pressed"]
+[connection signal="resized" from="Panel/HBox/VBox/History/History Scroll/History Contents" to="Panel/HBox/VBox/History" method="_on_history_contents_resized"]
 [connection signal="pressed" from="Panel/HBox/VBox/History/History Return to Main" to="Panel/HBox/VBox/History" method="_on_history_return_to_main_pressed"]
 [connection signal="visibility_changed" from="Panel/HBox/VBox/Input" to="Panel/HBox/VBox/Input" method="_on_visibility_changed"]
 [connection signal="value_changed" from="Panel/HBox/VBox/Input/Food_Slider" to="Panel/HBox/VBox/Input" method="_on_food_slider_value_changed"]
