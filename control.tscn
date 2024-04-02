@@ -804,4 +804,5 @@ layout_mode = 2
 [connection signal="pressed" from="Panel/HBox/VBox/Input/Input Button/Input_Confirm/Input_Confirm_Panel/VBoxContainer/Confirm Button" to="Panel/HBox/VBox/Input" method="_on_confirm_input_button_pressed"]
 [connection signal="pressed" from="Panel/HBox/VBox/Input/Input Button/Input_Confirm/Input_Confirm_Panel/VBoxContainer/Cancel Button" to="Panel/HBox/VBox/Input" method="_on_input_cancel_button_pressed"]
 [connection signal="pressed" from="Panel/HBox/VBox/Input/Input Main Menu Button" to="Panel/HBox/VBox/Input" method="_on_return_to_main_button"]
+[connection signal="resized" from="Panel/HBox/VBox/Output" to="Panel/HBox/VBox/Output" method="_on_resized"]
 [connection signal="pressed" from="Panel/HBox/VBox/Output/VBoxContainer/Output Return to Main" to="Panel/HBox/VBox/Output" method="_on_output_return_to_main_pressed"]
