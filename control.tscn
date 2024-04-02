@@ -74,7 +74,6 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_8pyq2")
 
 [node name="Main" type="VBoxContainer" parent="Panel/HBox/VBox"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 10
@@ -279,6 +278,7 @@ vertical_icon_alignment = 2
 
 [node name="Input" type="VBoxContainer" parent="Panel/HBox/VBox"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 script = ExtResource("1_n1rqy")
