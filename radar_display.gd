@@ -17,7 +17,7 @@ var WYDW_label: Label
 var WYDOK_label: Label
 var WYDP_label: Label
 
-var radar_offset = Vector2(331, 250)
+var radar_offset: Vector2
 const radar_scaling = 20
 
 # corners of identity pentagons
@@ -32,6 +32,9 @@ var data: UserData
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	data = %History.userData
+	
+	radar_offset = Vector2(get_viewport_rect().size.x/2 - 20, 250)
+	
 	# Make an array of offset rings
 	rings.append(get_node("1b"))
 	rings.append(get_node("2w"))
@@ -43,6 +46,7 @@ func _ready():
 	rings.append(get_node("8w"))
 	rings.append(get_node("9b"))
 	rings.append(get_node("10w"))
+	#print(rings)
 	
 	ring_labels.append(get_node("2"))
 	ring_labels.append(get_node("4"))
@@ -54,51 +58,31 @@ func _ready():
 	WYDOK_label = get_node("VBoxContainer/WYDOK_A_Label")
 	WYDP_label = get_node("VBoxContainer/WYDP_A_Label")
 	
-	# make sure they are in the corect position
-	for i in range (1, 11):
-		rings[i-1].position = radar_offset
-		rings[i-1].polygon[0] = radar_scaling*i*pos0
-		rings[i-1].polygon[1] = radar_scaling*i*pos1
-		rings[i-1].polygon[2] = radar_scaling*i*pos2
-		rings[i-1].polygon[3] = radar_scaling*i*pos3
-		rings[i-1].polygon[4] = radar_scaling*i*pos4
-	
-	for i in range (1, 6):
-		ring_labels[i-1].position = radar_offset + radar_scaling*(2*i-0.5)*(pos2+pos3)/2 - ring_labels[i-1].size/2
-	
-	food_quad = get_node("Food_quad")
-	food_quad.position = radar_offset
-	food_quad.polygon[2] = Vector2(0, 0)
-	
-	water_quad = get_node("Water_quad")
-	water_quad.position = radar_offset
-	water_quad.polygon[2] = Vector2(0, 0)
-	
-	sleep_quad = get_node("Sleep_quad")
-	sleep_quad.position = radar_offset
-	sleep_quad.polygon[2] = Vector2(0, 0)
-	
-	stress_quad = get_node("Stress_quad")
-	stress_quad.position = radar_offset
-	stress_quad.polygon[2] = Vector2(0, 0)
-	
-	activity_quad = get_node("Activity_quad")
-	activity_quad.position = radar_offset
-	activity_quad.polygon[2] = Vector2(0, 0)
-	
 	food_label = get_node("Food_label")
 	water_label = get_node("Water_label")
 	sleep_label = get_node("Sleep_label")
 	stress_label = get_node("Stress_label")
 	activity_label = get_node("Activity_label")
 	
-	food_label.position = radar_offset + 11*radar_scaling*pos0 - Vector2(food_label.size.x/2, food_label.size.y/4)
-	water_label.position = radar_offset + 11*radar_scaling*pos1 - Vector2(water_label.size.x/4, water_label.size.y/2)
-	sleep_label.position = radar_offset + 11*radar_scaling*pos2 - sleep_label.size/2
-	stress_label.position = radar_offset + 11*radar_scaling*pos3 - stress_label.size/2
-	activity_label.position = radar_offset + 11*radar_scaling*pos4 - Vector2(3*activity_label.size.x/4, activity_label.size.y/2)
+	food_quad = get_node("Food_quad")
+	food_quad.polygon[2] = Vector2(0, 0)
 	
+	water_quad = get_node("Water_quad")
+	water_quad.polygon[2] = Vector2(0, 0)
+	
+	sleep_quad = get_node("Sleep_quad")
+	sleep_quad.polygon[2] = Vector2(0, 0)
+	
+	stress_quad = get_node("Stress_quad")
+	stress_quad.polygon[2] = Vector2(0, 0)
+	
+	activity_quad = get_node("Activity_quad")
+	activity_quad.polygon[2] = Vector2(0, 0)
+	
+	# make sure they are in the corect position
 	update_output()
+	position_elements()
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(_delta):
@@ -180,7 +164,39 @@ func update_output():
 	activity_quad.polygon[1] = (activity_peak + food_peak)/4
 	activity_quad.polygon[3] = (activity_peak + stress_peak)/4
 	
+	#self.position_elements()
 	
 func _on_output_return_to_main_pressed():
 	self.visible = false
 	$"../Main".visible = true
+
+
+func position_elements():
+	#print(rings)
+	for i in range (1, 11):
+		rings[i-1].position = radar_offset
+		rings[i-1].polygon[0] = radar_scaling*i*pos0
+		rings[i-1].polygon[1] = radar_scaling*i*pos1
+		rings[i-1].polygon[2] = radar_scaling*i*pos2
+		rings[i-1].polygon[3] = radar_scaling*i*pos3
+		rings[i-1].polygon[4] = radar_scaling*i*pos4
+	
+	for i in range (1, 6):
+		ring_labels[i-1].position = radar_offset + radar_scaling*(2*i-0.5)*(pos2+pos3)/2 - ring_labels[i-1].size/2
+	
+	food_quad.position = radar_offset
+	water_quad.position = radar_offset
+	sleep_quad.position = radar_offset
+	stress_quad.position = radar_offset
+	activity_quad.position = radar_offset
+		
+	food_label.position = radar_offset + 11*radar_scaling*pos0 - Vector2(food_label.size.x/2, food_label.size.y/4)
+	water_label.position = radar_offset + 11*radar_scaling*pos1 - Vector2(water_label.size.x/4, water_label.size.y/2)
+	sleep_label.position = radar_offset + 11*radar_scaling*pos2 - sleep_label.size/2
+	stress_label.position = radar_offset + 11*radar_scaling*pos3 - stress_label.size/2
+	activity_label.position = radar_offset + 11*radar_scaling*pos4 - Vector2(3*activity_label.size.x/4, activity_label.size.y/2)
+
+
+func _on_resized():
+	radar_offset = Vector2(get_viewport_rect().size.x/2 -20, 250)
+	self.position_elements()
