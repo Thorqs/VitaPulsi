@@ -261,6 +261,10 @@ text = "Return to Main Menu"
 icon_alignment = 1
 vertical_icon_alignment = 2
 
+[node name="Settings RtMM Bottom Spacer" type="Control" parent="Panel/HBox/VBox/Settings"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
 [node name="History" type="VBoxContainer" parent="Panel/HBox/VBox"]
 unique_name_in_owner = true
 visible = false
@@ -293,6 +297,10 @@ theme_override_font_sizes/font_size = 20
 text = "Return to Main Menu"
 icon_alignment = 1
 vertical_icon_alignment = 2
+
+[node name="History RtMM Bottom Spacer2" type="Control" parent="Panel/HBox/VBox/History"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
 
 [node name="Input" type="VBoxContainer" parent="Panel/HBox/VBox"]
 unique_name_in_owner = true
@@ -563,12 +571,20 @@ text = "Confirm"
 layout_mode = 2
 text = "Cancel"
 
+[node name="Button Spacer2" type="Control" parent="Panel/HBox/VBox/Input"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
 [node name="Input Main Menu Button" type="Button" parent="Panel/HBox/VBox/Input"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Return to Main Menu"
 icon_alignment = 1
 vertical_icon_alignment = 2
+
+[node name="Input RtMM Bottom Spacer3" type="Control" parent="Panel/HBox/VBox/Input"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
 
 [node name="Output" type="Control" parent="Panel/HBox/VBox"]
 unique_name_in_owner = true
@@ -813,6 +829,10 @@ theme_override_font_sizes/font_size = 20
 text = "Return to Main Menu"
 icon_alignment = 1
 vertical_icon_alignment = 2
+
+[node name="Output RtMM Bottom Spacer4" type="Control" parent="Panel/HBox/VBox/Output/VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
 
 [node name="Lower Border" type="Control" parent="Panel/HBox/VBox"]
 custom_minimum_size = Vector2(0, 25)
