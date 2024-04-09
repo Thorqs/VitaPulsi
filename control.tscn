@@ -57,17 +57,27 @@ theme_override_constants/separation = 5
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 
-[node name="Title - LifePulse" type="Label" parent="Panel/HBox/VBox"]
+[node name="Panel" type="Panel" parent="Panel/HBox/VBox"]
+custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
-theme_type_variation = &"HeaderMedium"
-text = "LifePulse"
-horizontal_alignment = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_8pyq2")
 
 [node name="Title\'s Spacer" type="Control" parent="Panel/HBox/VBox"]
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="Panel/HBox/VBox"]
+[node name="Title - LifePulse" type="Label" parent="Panel/HBox/VBox"]
+layout_mode = 2
+theme_type_variation = &"HeaderMedium"
+theme_override_font_sizes/font_size = 30
+text = "Viva Pulsus"
+horizontal_alignment = 1
+
+[node name="Title\'s Spacer2" type="Control" parent="Panel/HBox/VBox"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="Panel2" type="Panel" parent="Panel/HBox/VBox"]
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_8pyq2")
@@ -91,42 +101,43 @@ theme_override_constants/separation = 10
 [node name="MM Input Button" type="Button" parent="Panel/HBox/VBox/Main/MM IO Buttons"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
 text = "Input"
 
 [node name="MM Output Button" type="Button" parent="Panel/HBox/VBox/Main/MM IO Buttons"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
 text = "Output"
 icon_alignment = 1
 vertical_icon_alignment = 2
 
 [node name="Button Spacer2" type="Control" parent="Panel/HBox/VBox/Main"]
-visible = false
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
 [node name="MM History Button" type="Button" parent="Panel/HBox/VBox/Main"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "History"
 icon_alignment = 1
 vertical_icon_alignment = 2
 
 [node name="Button Spacer3" type="Control" parent="Panel/HBox/VBox/Main"]
-custom_minimum_size = Vector2(0, 25)
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-size_flags_vertical = 3
 
 [node name="MM Settings Button" type="Button" parent="Panel/HBox/VBox/Main"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "Settings"
 icon_alignment = 1
 vertical_icon_alignment = 2
 
-[node name="MM Exit App Button" type="Button" parent="Panel/HBox/VBox/Main"]
+[node name="Button Spacer4" type="Control" parent="Panel/HBox/VBox/Main"]
+custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
-text = "Exit Application"
-icon_alignment = 1
-vertical_icon_alignment = 2
+size_flags_vertical = 3
 
 [node name="Settings" type="VBoxContainer" parent="Panel/HBox/VBox"]
 unique_name_in_owner = true
@@ -138,9 +149,11 @@ script = ExtResource("4_jqwa7")
 [node name="Settings Spacer Top" type="Control" parent="Panel/HBox/VBox/Settings"]
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="Settings" type="Label" parent="Panel/HBox/VBox/Settings"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "- Purpose -"
 horizontal_alignment = 1
 
@@ -150,7 +163,8 @@ layout_mode = 2
 
 [node name="Purpose" type="Label" parent="Panel/HBox/VBox/Settings"]
 layout_mode = 2
-text = "Lifepulse is an attempt to monitor common health habits and present them to the user in a way that shows what they are doing well, and what they can be doing better.
+theme_override_font_sizes/font_size = 20
+text = "Viva Pulsus is an attempt to monitor common health habits and present them to the user in a way that shows what they are doing well, and what they can be doing better.
 
 Ideally the user will make a log each day. Once the habit is formed this process should only take a few minutes. After a few weeks, Lifepulse should have enough data to give a relatively accurate view of the users current lifestyle."
 horizontal_alignment = 1
@@ -163,6 +177,7 @@ size_flags_vertical = 3
 
 [node name="Data Clear" type="Label" parent="Panel/HBox/VBox/Settings"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "If necessary, below is the button to wipe all saved data.
 Only press if you are certain you want to delete ALL logs."
 horizontal_alignment = 1
@@ -175,6 +190,7 @@ layout_mode = 2
 
 [node name="Clear_Button" type="Button" parent="Panel/HBox/VBox/Settings"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "Delete ALL Logs"
 icon_alignment = 1
 vertical_icon_alignment = 2
@@ -240,6 +256,7 @@ size_flags_vertical = 3
 
 [node name="Settings Return to Main" type="Button" parent="Panel/HBox/VBox/Settings"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "Return to Main Menu"
 icon_alignment = 1
 vertical_icon_alignment = 2
@@ -272,6 +289,7 @@ layout_mode = 2
 
 [node name="History Return to Main" type="Button" parent="Panel/HBox/VBox/History"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "Return to Main Menu"
 icon_alignment = 1
 vertical_icon_alignment = 2
@@ -292,6 +310,7 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme_override_font_sizes/font_size = 20
 text = "In the last day, on a scale of 1 to 10, how would you rate your:"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -307,6 +326,7 @@ layout_mode = 2
 
 [node name="Food_Label" type="Label" parent="Panel/HBox/VBox/Input/HBox_Food"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "Eating habits?"
 
 [node name="Food_spacer" type="Control" parent="Panel/HBox/VBox/Input/HBox_Food"]
@@ -327,6 +347,7 @@ tick_count = 10
 
 [node name="Food Label" type="Label" parent="Panel/HBox/VBox/Input"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "One would be a very poor diet, low in nutritional value.
 Ten would be a perfect diet, meeting your every need."
 vertical_alignment = 1
@@ -341,6 +362,7 @@ layout_mode = 2
 
 [node name="Water_Label" type="Label" parent="Panel/HBox/VBox/Input/HBox_Water"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "Water intake?"
 
 [node name="Water_space" type="Control" parent="Panel/HBox/VBox/Input/HBox_Water"]
@@ -361,6 +383,7 @@ tick_count = 10
 
 [node name="Water Label" type="Label" parent="Panel/HBox/VBox/Input"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "One would likely be too little, or no, water.
 Ten would be the perfect amount of water for that person."
 vertical_alignment = 1
@@ -375,6 +398,7 @@ layout_mode = 2
 
 [node name="Sleep_Label" type="Label" parent="Panel/HBox/VBox/Input/HBox_Sleep"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "Quality of sleep?"
 
 [node name="sleep_space" type="Control" parent="Panel/HBox/VBox/Input/HBox_Sleep"]
@@ -395,6 +419,7 @@ tick_count = 10
 
 [node name="Sleep Label" type="Label" parent="Panel/HBox/VBox/Input"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "One would likely be too little, or no, sleep.
 Ten would be the perfect amount of sleep for that person."
 vertical_alignment = 1
@@ -409,6 +434,7 @@ layout_mode = 2
 
 [node name="Stress_Label" type="Label" parent="Panel/HBox/VBox/Input/HBox_Stress"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "Ability to manage stress?"
 
 [node name="Stress_Space" type="Control" parent="Panel/HBox/VBox/Input/HBox_Stress"]
@@ -429,6 +455,7 @@ tick_count = 10
 
 [node name="Stress Label" type="Label" parent="Panel/HBox/VBox/Input"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "One would mean you are unable to manage current stressors.
 Ten would mean you are able to manage stressors perfectly."
 vertical_alignment = 1
@@ -443,6 +470,7 @@ layout_mode = 2
 
 [node name="Activity_Label" type="Label" parent="Panel/HBox/VBox/Input/HBox_Activity"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "Physical activity levels?"
 
 [node name="activity_Space" type="Control" parent="Panel/HBox/VBox/Input/HBox_Activity"]
@@ -463,6 +491,7 @@ tick_count = 10
 
 [node name="Activity Label" type="Label" parent="Panel/HBox/VBox/Input"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "One would be too little, or too much, activity.
 Ten would be the perfect amount of activity for that person."
 vertical_alignment = 1
@@ -475,6 +504,7 @@ size_flags_vertical = 3
 
 [node name="Input Button" type="Button" parent="Panel/HBox/VBox/Input"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "Confirm Values"
 icon_alignment = 1
 vertical_icon_alignment = 2
@@ -535,6 +565,7 @@ text = "Cancel"
 
 [node name="Input Main Menu Button" type="Button" parent="Panel/HBox/VBox/Input"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "Return to Main Menu"
 icon_alignment = 1
 vertical_icon_alignment = 2
@@ -729,12 +760,14 @@ layout_mode = 2
 
 [node name="WYDW_Q_Label" type="Label" parent="Panel/HBox/VBox/Output/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "You are doing the following exceptionally:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="WYDW_A_Label" type="Label" parent="Panel/HBox/VBox/Output/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -743,12 +776,14 @@ layout_mode = 2
 
 [node name="WYDOK_Q_Label" type="Label" parent="Panel/HBox/VBox/Output/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "You are doing the following well:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="WYDOK_A_Label" type="Label" parent="Panel/HBox/VBox/Output/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -757,12 +792,14 @@ layout_mode = 2
 
 [node name="WYDP_Q_Label" type="Label" parent="Panel/HBox/VBox/Output/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "These are areas that you can improve on:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="WYDP_A_Label" type="Label" parent="Panel/HBox/VBox/Output/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -772,6 +809,7 @@ layout_mode = 2
 
 [node name="Output Return to Main" type="Button" parent="Panel/HBox/VBox/Output/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "Return to Main Menu"
 icon_alignment = 1
 vertical_icon_alignment = 2
@@ -788,7 +826,6 @@ layout_mode = 2
 [connection signal="pressed" from="Panel/HBox/VBox/Main/MM IO Buttons/MM Output Button" to="Panel/HBox/VBox/Main" method="_on_mm_output_button_pressed"]
 [connection signal="pressed" from="Panel/HBox/VBox/Main/MM History Button" to="Panel/HBox/VBox/Main" method="_on_mm_history_button_pressed"]
 [connection signal="pressed" from="Panel/HBox/VBox/Main/MM Settings Button" to="Panel/HBox/VBox/Main" method="_on_mm_settings_button_pressed"]
-[connection signal="pressed" from="Panel/HBox/VBox/Main/MM Exit App Button" to="Panel/HBox/VBox/Main" method="_on_mm_exit_app_button_pressed"]
 [connection signal="pressed" from="Panel/HBox/VBox/Settings/Clear_Button" to="Panel/HBox/VBox/Settings" method="_on_clear_button_pressed"]
 [connection signal="pressed" from="Panel/HBox/VBox/Settings/Clear_Button/Clear_Confirm/Clear_Confirm_Panel/VBoxContainer/Confirm Button" to="Panel/HBox/VBox/Settings" method="_on_confirm_button_pressed"]
 [connection signal="pressed" from="Panel/HBox/VBox/Settings/Clear_Button/Clear_Confirm/Clear_Confirm_Panel/VBoxContainer/Cancel Button" to="Panel/HBox/VBox/Settings" method="_on_clear_cancel_button_pressed"]

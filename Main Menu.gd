@@ -10,10 +10,6 @@ func _ready():
 #func _process(delta):
 #	pass
 
-func _on_mm_exit_app_button_pressed():
-	get_tree().quit()
-
-
 func _on_mm_settings_button_pressed():
 	%Settings.visible = true
 	self.visible = false
