@@ -166,7 +166,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Viva Pulsus is an attempt to monitor common health habits and present them to the user in a way that shows what they are doing well, and what they can be doing better.
 
-Ideally the user will make a log each day. Once the habit is formed this process should only take a few minutes. After a few weeks, Lifepulse should have enough data to give a relatively accurate view of the users current lifestyle."
+Ideally the user will make a log each day. Once the habit is formed this process should only take a few minutes. After a few weeks, Viva Pulsus should have enough data to give a relatively accurate view of the users current lifestyle."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -753,7 +753,7 @@ text = "Sleep"
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
-text = "Stress Management"
+text = "Stress"
 
 [node name="Activity_label" type="Label" parent="Panel/HBox/VBox/Output"]
 layout_mode = 0
