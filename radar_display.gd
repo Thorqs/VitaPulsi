@@ -18,7 +18,7 @@ var WYDOK_label: Label
 var WYDP_label: Label
 
 var radar_offset: Vector2
-const radar_scaling = 20
+const radar_scaling = 25
 
 # corners of identity pentagons
 const pos0 = Vector2(0, -1)
@@ -33,7 +33,7 @@ var data: UserData
 func _ready():
 	data = %History.userData
 	
-	radar_offset = Vector2(get_viewport_rect().size.x/2 - 20, 250)
+	radar_offset = Vector2(get_viewport_rect().size.x/2 - 20, 325)
 	
 	# Make an array of offset rings
 	rings.append(get_node("1b"))
@@ -198,5 +198,5 @@ func position_elements():
 
 
 func _on_resized():
-	radar_offset = Vector2(get_viewport_rect().size.x/2 -20, 250)
+	radar_offset = Vector2(get_viewport_rect().size.x/2 -20, 325)
 	self.position_elements()
