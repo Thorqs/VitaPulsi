@@ -70,7 +70,7 @@ layout_mode = 2
 layout_mode = 2
 theme_type_variation = &"HeaderMedium"
 theme_override_font_sizes/font_size = 30
-text = "Viva Pulsus"
+text = "Vita Pulsi"
 horizontal_alignment = 1
 
 [node name="Title\'s Spacer2" type="Control" parent="Panel/HBox/VBox"]
@@ -164,9 +164,9 @@ layout_mode = 2
 [node name="Purpose" type="Label" parent="Panel/HBox/VBox/Settings"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "Viva Pulsus is an attempt to monitor common health habits and present them to the user in a way that shows what they are doing well, and what they can be doing better.
+text = "Vita Pulsi is an attempt to monitor common health habits and present them to the user in a way that shows what they are doing well, and what they can be doing better.
 
-Ideally the user will make a log each day. Once the habit is formed this process should only take a few minutes. After a few weeks, Viva Pulsus should have enough data to give a relatively accurate view of the users current lifestyle."
+Ideally the user will make a log each day. Once the habit is formed this process should only take a few minutes. After a few weeks, Vita Pulsi should have enough data to give a relatively accurate view of the users current lifestyle."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
