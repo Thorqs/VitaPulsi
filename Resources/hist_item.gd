@@ -21,7 +21,6 @@ func _ready():
 #func _process(delta):
 #	pass
 func set_date(new_date: String):
-	print(date_label, new_date)
 	date_label.set_text(new_date)
 
 func set_val(val_name: Label, new_value: int):

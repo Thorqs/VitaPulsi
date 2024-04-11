@@ -20,16 +20,16 @@ func load_data():
 			contents = line.split(", ")
 			#for item in contents:
 			#	item = item.strip()
-			print("contents: ", contents)
+			#print("contents: ", contents)
 			# find a better way to do line below
 			day_data = [int(contents[1]), int(contents[2]), int(contents[3]), int(contents[4]), int(contents[5])]
 			history_data[contents[0]] = day_data
 			
-		print("Loaded ", history_data)
+		#print("Loaded ", history_data)
 
 func save_data(values: Array[int], day = Time.get_date_string_from_system()):
 	history_data[day] = values
-	print("saving ", values, day)
+	#print("saving ", values, day)
 	#ResourceSaver.save(self, save_file_path + save_file_name)
 	var save_file = FileAccess.open(save_file_path + save_file_name, FileAccess.WRITE)
 	for date in history_data:

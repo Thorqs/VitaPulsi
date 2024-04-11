@@ -48,7 +48,6 @@ func _ready():
 	rings.append(get_node("8w"))
 	rings.append(get_node("9b"))
 	rings.append(get_node("10w"))
-	#print(rings)
 	
 	ring_labels.append(get_node("2"))
 	ring_labels.append(get_node("4"))
@@ -176,7 +175,6 @@ func _on_output_return_to_main_pressed():
 
 
 func position_elements():
-	#print(rings)
 	for i in range (1, 11):
 		rings[i-1].position = radar_offset
 		rings[i-1].polygon[0] = radar_scaling*i*pos0
