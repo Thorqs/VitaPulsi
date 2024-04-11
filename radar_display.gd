@@ -202,7 +202,7 @@ func position_elements():
 	
 	recommendation_box.size.x = 662
 	
-	recommendation_box.position.y = stress_label.position.y + 60
+	recommendation_box.position.y = (stress_label.position.y + stress_label.size.y + get_viewport_rect().size.y - 90 - recommendation_box.size.y)/2
 	recommendation_box.position.x = get_viewport_rect().size.x/2 - 20 - recommendation_box.size.x/2
 
 
