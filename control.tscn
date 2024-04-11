@@ -142,7 +142,6 @@ size_flags_vertical = 3
 
 [node name="Settings" type="VBoxContainer" parent="Panel/HBox/VBox"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 script = ExtResource("4_jqwa7")
@@ -305,7 +304,6 @@ layout_mode = 2
 
 [node name="Input" type="VBoxContainer" parent="Panel/HBox/VBox"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 script = ExtResource("1_n1rqy")
@@ -589,6 +587,7 @@ layout_mode = 2
 
 [node name="Output" type="Control" parent="Panel/HBox/VBox"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 script = ExtResource("2_m2p0q")
@@ -830,16 +829,27 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 65)
 layout_mode = 2
 
-[node name="Output Return to Main" type="Button" parent="Panel/HBox/VBox"]
-layout_mode = 2
+[node name="Output Return to Main" type="Button" parent="Panel/HBox/VBox/Output"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -64.0
+grow_horizontal = 2
+grow_vertical = 0
 theme_override_font_sizes/font_size = 20
 text = "Return to Main Menu"
 icon_alignment = 1
 vertical_icon_alignment = 2
 
-[node name="Output RtMM Bottom Spacer4" type="Control" parent="Panel/HBox/VBox"]
+[node name="Output RtMM Bottom Spacer4" type="Control" parent="Panel/HBox/VBox/Output"]
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
+anchors_preset = 0
+offset_top = 547.0
+offset_right = 662.0
+offset_bottom = 572.0
 
 [node name="Lower Border" type="Control" parent="Panel/HBox/VBox"]
 custom_minimum_size = Vector2(0, 25)
@@ -870,4 +880,4 @@ layout_mode = 2
 [connection signal="pressed" from="Panel/HBox/VBox/Input/Input Button/Input_Confirm/Input_Confirm_Panel/VBoxContainer/Cancel Button" to="Panel/HBox/VBox/Input" method="_on_input_cancel_button_pressed"]
 [connection signal="pressed" from="Panel/HBox/VBox/Input/Input Main Menu Button" to="Panel/HBox/VBox/Input" method="_on_return_to_main_button"]
 [connection signal="resized" from="Panel/HBox/VBox/Output" to="Panel/HBox/VBox/Output" method="_on_resized"]
-[connection signal="pressed" from="Panel/HBox/VBox/Output Return to Main" to="Panel/HBox/VBox/Output" method="_on_output_return_to_main_pressed"]
+[connection signal="pressed" from="Panel/HBox/VBox/Output/Output Return to Main" to="Panel/HBox/VBox/Output" method="_on_output_return_to_main_pressed"]

@@ -4,7 +4,11 @@ extends VBoxContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	self.visible = true
+	%Settings.visible = false
+	%History.visible = false
+	%Input.visible = false
+	%Output.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
