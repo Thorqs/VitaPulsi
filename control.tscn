@@ -84,6 +84,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_8pyq2")
 
 [node name="Main" type="VBoxContainer" parent="Panel/HBox/VBox"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 10
@@ -588,7 +589,6 @@ layout_mode = 2
 
 [node name="Output" type="Control" parent="Panel/HBox/VBox"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 script = ExtResource("2_m2p0q")
@@ -733,43 +733,50 @@ vertical_alignment = 1
 
 [node name="Food_label" type="Label" parent="Panel/HBox/VBox/Output"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 205.0
+offset_top = -25.0
+offset_right = 245.0
+offset_bottom = 1.0
 text = "Food"
 
 [node name="Water_label" type="Label" parent="Panel/HBox/VBox/Output"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 318.0
+offset_top = 25.0
+offset_right = 365.0
+offset_bottom = 51.0
 text = "Water"
 
 [node name="Sleep_label" type="Label" parent="Panel/HBox/VBox/Output"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 298.0
+offset_top = 175.0
+offset_right = 340.0
+offset_bottom = 201.0
 text = "Sleep"
 
 [node name="Stress_label" type="Label" parent="Panel/HBox/VBox/Output"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 131.0
+offset_top = 176.0
+offset_right = 178.0
+offset_bottom = 202.0
 text = "Stress"
 
 [node name="Activity_label" type="Label" parent="Panel/HBox/VBox/Output"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 70.0
+offset_top = 39.0
+offset_right = 128.0
+offset_bottom = 65.0
 text = "Activity"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBox/VBox/Output"]
 layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -375.0
+offset_bottom = 444.0
 grow_horizontal = 2
-grow_vertical = 0
 
 [node name="WYDW_Spacer" type="Label" parent="Panel/HBox/VBox/Output/VBoxContainer"]
 layout_mode = 2
@@ -823,14 +830,14 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 65)
 layout_mode = 2
 
-[node name="Output Return to Main" type="Button" parent="Panel/HBox/VBox/Output/VBoxContainer"]
+[node name="Output Return to Main" type="Button" parent="Panel/HBox/VBox"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Return to Main Menu"
 icon_alignment = 1
 vertical_icon_alignment = 2
 
-[node name="Output RtMM Bottom Spacer4" type="Control" parent="Panel/HBox/VBox/Output/VBoxContainer"]
+[node name="Output RtMM Bottom Spacer4" type="Control" parent="Panel/HBox/VBox"]
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 
@@ -863,4 +870,4 @@ layout_mode = 2
 [connection signal="pressed" from="Panel/HBox/VBox/Input/Input Button/Input_Confirm/Input_Confirm_Panel/VBoxContainer/Cancel Button" to="Panel/HBox/VBox/Input" method="_on_input_cancel_button_pressed"]
 [connection signal="pressed" from="Panel/HBox/VBox/Input/Input Main Menu Button" to="Panel/HBox/VBox/Input" method="_on_return_to_main_button"]
 [connection signal="resized" from="Panel/HBox/VBox/Output" to="Panel/HBox/VBox/Output" method="_on_resized"]
-[connection signal="pressed" from="Panel/HBox/VBox/Output/VBoxContainer/Output Return to Main" to="Panel/HBox/VBox/Output" method="_on_output_return_to_main_pressed"]
+[connection signal="pressed" from="Panel/HBox/VBox/Output Return to Main" to="Panel/HBox/VBox/Output" method="_on_output_return_to_main_pressed"]

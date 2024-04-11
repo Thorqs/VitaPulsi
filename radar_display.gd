@@ -17,6 +17,8 @@ var WYDW_label: Label
 var WYDOK_label: Label
 var WYDP_label: Label
 
+var recommendation_box: VBoxContainer
+
 var radar_offset: Vector2
 const radar_scaling = 25
 
@@ -78,6 +80,8 @@ func _ready():
 	
 	activity_quad = get_node("Activity_quad")
 	activity_quad.polygon[2] = Vector2(0, 0)
+	
+	recommendation_box = get_node("VBoxContainer")
 	
 	# make sure they are in the corect position
 	update_output()
@@ -195,6 +199,11 @@ func position_elements():
 	sleep_label.position = radar_offset + 11*radar_scaling*pos2 - sleep_label.size/2
 	stress_label.position = radar_offset + 11*radar_scaling*pos3 - stress_label.size/2
 	activity_label.position = radar_offset + 11*radar_scaling*pos4 - Vector2(3*activity_label.size.x/4, activity_label.size.y/2)
+	
+	recommendation_box.size.x = 662
+	
+	recommendation_box.position.y = stress_label.position.y + 60
+	recommendation_box.position.x = get_viewport_rect().size.x/2 - 20 - recommendation_box.size.x/2
 
 
 func _on_resized():
